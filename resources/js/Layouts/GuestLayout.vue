@@ -8,8 +8,8 @@ let locale = ref('ar');
 let dir = ref('rtl');
 
 onMounted(() => {
-    locale = window.locale
-    dir = window.dir
+    locale.value = window.locale
+    dir.value = window.dir
 });
 const changeLocale = (event) => {
     let lang = event.target.value;
