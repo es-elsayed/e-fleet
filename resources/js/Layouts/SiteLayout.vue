@@ -4,11 +4,11 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import saIcon from '@/Icons/sa.vue';
+import enIcon from '@/Icons/en.vue';
 import { Link } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
 
-import saIcon from '@/Icons/sa.vue';
-import enIcon from '@/Icons/en.vue';
 const showingNavigationDropdown = ref(false);
 
 let locale = ref('');
@@ -31,46 +31,77 @@ const changeLocale = (lang) => {
 <template>
     <div :dir="dir">
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="sticky top-0 w-full z-50 bg-sec-600 border-gray-200 px-4 lg:px-6 py-2 dark:bg-gray-800 ">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
-                        <div class="flex">
-                            <!-- Logo -->
-                            <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
-                                <ApplicationLogo class="block h-9 w-auto fill-current text-gray-800" />
-                                </Link>
-                            </div>
-
-                            <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    {{ $t('Dashboard') }}
-                                </NavLink>
-                            </div>
+                        <!-- <div class="flex w-full"> -->
+                        <!-- Logo -->
+                        <div class="w-full flex items-center">
+                            <Link :href="route('dashboard')">
+                            <ApplicationLogo class="block h-9 w-auto fill-current text-gray-800" />
+                            </Link>
                         </div>
-                        <!-- <div class="flex items-center justify-end w-full sm:sm-6">
+
+                        <!-- Navigation Links -->
+                        <div
+                            class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex whitespace-nowrap w-full justify-center font-bold">
+                            <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex whitespace-nowrap"> -->
+                            <NavLink :href="route('home')" :active="route().current('home')">
+                                {{ $t('Home') }}
+                            </NavLink>
+                            <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                {{ $t('Cars') }}
+                            </NavLink>
+                            <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                {{ $t('Location') }}
+                            </NavLink>
+                            <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                {{ $t('Contact Us') }}
+                            </NavLink>
+                            <NavLink v-if="locale=='ar'" href="#" @click="changeLocale('en')" :title="$t('en')">
+                                <span class="inline-block w-6">
+                                    <enIcon/>
+                                </span>
+                            </NavLink>
+                            <NavLink v-else href="#" @click="changeLocale('ar')" :title="$t('ar')">
+                                <span class="inline-block w-6">
+                                    <saIcon/>
+                                </span>
+                            </NavLink>
+                            <!-- <div class="flex items-center sm:sm-6">
+
                             <div class="ms-3 relative">
                                 <select @change="changeLocale" v-model="locale"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700
-                                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    class="bg-sec-50 border border-sec-300 text-sec-900 text-sm rounded-lg focus:ring-pr-500 focus:border-pr-500 block w-full dark:bg-sec-700
+                                    dark:border-sec-600 dark:placeholder-sec-400 dark:text-white dark:focus:ring-pr-500 dark:focus:border-pr-500">
                                     <option value="en" :selected="locale == 'en'">{{ $t('en') }}</option>
                                     <option value="ar" :selected="locale == 'ar'">{{ $t('ar') }}</option>
                                 </select>
                             </div>
-                        </div> -->
-                        <div class="hidden sm:flex sm:items-center sm:ms-6">
-                            <NavLink v-if="locale=='ar'" href="#" @click="changeLocale('en')" :title="$t('en')">
-                                    <span class="inline-block w-6">
-                                        <enIcon/>
-                                    </span>
-                                </NavLink>
-                                <NavLink v-else href="#" @click="changeLocale('ar')" :title="$t('ar')">
-                                    <span class="inline-block w-6">
-                                        <saIcon/>
-                                    </span>
-                                </NavLink>
+                            </div> -->
+                        </div>
+                        <!-- </div> -->
+                        <div class="flex items-center justify-end sm:sm-6 w-full">
+
+                            <div class="ms-3 relative">
+                                <Link :href="route('login')"
+                                    class="px-4 lg:px-5 py-2 lg:py-2.5 mx-2 text-white bg-gradient-to-br from-pr-400 to-pr-300 hover:bg-gradient-to-bl font-medium rounded-lg text-sm">
+                                {{ $t('login') }}
+                                </Link>
+                                <!-- class="inline-block mx-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> -->
+
+                                <!-- class="inline-block mx-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> -->
+                                <Link :href="route('register')"
+                                    class="mx-2 relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 ">
+                                <span
+                                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-sec-600 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                    {{ $t('register') }}
+                                </span>
+                                </Link>
+                            </div>
+                        </div>
+                        <div v-if="$page.props.auth.user" class="hidden sm:flex sm:items-center sm:ms-6">
                             <!-- Settings Dropdown -->
                             <div class="ms-3 relative">
                                 <Dropdown align="right" width="48">
@@ -129,7 +160,7 @@ const changeLocale = (lang) => {
                     </div>
 
                     <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div v-if="$page.props.auth.user" class="pt-4 pb-1 border-t border-gray-200">
                         <div class="px-4">
                             <div class="font-medium text-base text-gray-800">
                                 {{ $page.props.auth.user.name }}
