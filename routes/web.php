@@ -3,6 +3,8 @@
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\DashboardController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
+Route::get('/change-locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    Session::save();
+    App::setLocale($locale);
+    redirect(request()->url());
+})->name('change-locale');
 
-Route::group(['middleware'=>'auth'],function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
-
 });
-
