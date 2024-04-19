@@ -34,6 +34,16 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'flash' => [
+                'success' => $request->session()->get('success'),
+                'error' => $request->session()->get('error'),
+            ],
+            'settings' => [
+                'company_info' => ['en' =>  'company info in english', 'ar' =>   'معلومات الشركة بالعربي'],
+                'company_address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
+                'company_phone' => ['en' =>  'company phone in english', 'ar' =>   'هاتف الشركة بالعربي'],
+                'company_tax' => ['en' =>  'company tax in english', 'ar' =>   'السجل الضريبي بالعربي'],
+            ],
         ];
     }
 }
