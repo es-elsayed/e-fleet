@@ -3,39 +3,24 @@ import SiteLayout from '@/Layouts/SiteLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import Carousel from "@/Components/Carousel.vue";
 
-const items = {
-    1:{
-        title: "Image One",
-        description: "Description One",
-        src: "https://hd.wallpaperswide.com/thumbs/chevy_camaro_classic_cars-t2.jpg",
-    },
-    2:{
-        title: "Image Two",
-        description: "Description Two",
-        src: "https://hd.wallpaperswide.com/thumbs/chevy_camaro_classic_cars-t2.jpg",
-    },
-    3:{
-        title: "Image Three",
-        description: "Description Three",
-        src: "https://hd.wallpaperswide.com/thumbs/chevy_camaro_classic_cars-t2.jpg",
-    },
-    4:{
-        title: "Image Four",
-        description: "Description Four",
-        src: "https://hd.wallpaperswide.com/thumbs/chevy_camaro_classic_cars-t2.jpg",
-    },
-}
+defineProps({
+    sliders: {
+        type: Object,
+        default: {}
+    }
+})
 </script>
 
 <template>
+
     <Head :title="$t('Dashboard')" />
 
     <SiteLayout>
 
-        <Carousel nav-position='in' :items="items" :num-in-lg="1"
-            :num-in-md="1" navigation pagination>
+        <Carousel wrap-arround nav-position='in' :items="sliders" :num-in-lg="1" :num-in-md="1" navigation pagination>
             <template v-slot="{ item }">
-                <img src="https://hd.wallpaperswide.com/thumbs/chevy_camaro_classic_cars-t2.jpg" :title="item.title" class="block w-full h-[200px] md:h-[600px]" alt="Wild Landscape" />
+                <img :src="item.image_url" :title="item.title"
+                    class="block w-full h-[200px] md:h-[600px]" alt="Wild Landscape" />
                 <div class="absolute top-0 bottom-0 flex items-center justify-center text-center carousel-caption">
                     <h5 class="text-lg md:text-5xl font-Tajawal">
                         {{ item.description }}
@@ -46,8 +31,8 @@ const items = {
         </Carousel>
 
         <div>
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">{{ $t('logged_in') }}</div>
                 </div>
             </div>
