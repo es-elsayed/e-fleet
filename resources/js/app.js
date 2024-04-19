@@ -5,15 +5,17 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-import { createI18n } from 'vue-i18n/dist/vue-i18n.cjs';
+import { createI18n } from 'vue-i18n';
 import messages from './lang.js';
-
+import axios from 'axios'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 let intialLocale = localStorage.getItem('locale') ?? 'ar';
 
 function setLocale(locale) {
+    axios.get(route('change-locale', locale));
+
     i18n.global.locale = locale;
     localStorage.setItem('locale', locale);
     window.locale = locale;
