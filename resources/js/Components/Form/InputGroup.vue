@@ -22,7 +22,7 @@ defineProps({
 
 <template>
     <div>
-        <Label v-if="label" :value="label" />
+        <Label v-if="label" :value="label" :required="$attrs.required" />
         <Input :type="type" class="block w-full mt-1" :model-value="modelValue"
             @update:model-value="$emit('update:modelValue', $event)" v-bind="$attrs" />
         <Error v-if="errorMessage" class="mt-1" :message="errorMessage" />

@@ -2,7 +2,7 @@
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import { useMediaQuery } from "@vueuse/core";
-import { computed, defineComponent } from "vue";
+import { computed,   defineComponent } from "vue";
 
 defineComponent({
     Carousel,
@@ -33,6 +33,10 @@ const props = defineProps({
         type: Number,
         default: 1
     },
+    wrapArround: {
+        type: Boolean,
+        default: false
+    },
     autoplay: {
         type: Number,
         default: 2000
@@ -48,6 +52,7 @@ const props = defineProps({
             return ['out', 'in'].includes(value);
         },
     },
+
 });
 
 const screenSizeLookup = {
@@ -79,8 +84,8 @@ const navClass = `${props.navClasses} ${navigationPosition.value}`;
 </script>
 
 <template>
-    <carousel dir="rtl" :items-to-show="perPage" :items-to-scroll="perPage" :autoplay="autoplay" :transition="1000"
-        v-bind="$attrs">
+    <carousel dir="rtl" snapAlign="start" :wrap-around="wrapArround" :items-to-show="perPage" :items-to-scroll="perPage" :autoplay="autoplay"
+        :transition="1000" v-bind="$attrs">
         <Slide v-for="item in items" :key="item">
             <slot :item="item" />
         </Slide>
@@ -120,10 +125,28 @@ const navClass = `${props.navClasses} ${navigationPosition.value}`;
     right: 4rem !important;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 960px) {
     .carousel__next,
     .carousel__prev {
         display: none !important;
+    }
+}
+@media (max-width: 1400px) {
+
+    .out.carousel__next {
+        left: -2rem !important;
+    }
+
+    .out.carousel__prev {
+        right: -2rem !important;
+    }
+
+    .in.carousel__next {
+        left: 4rem !important;
+    }
+
+    .in.carousel__prev {
+        right: 4rem !important;
     }
 }
 </style>

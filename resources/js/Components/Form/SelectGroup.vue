@@ -31,7 +31,7 @@ defineProps({
 
 <template>
     <div>
-        <Label v-if="label" :value="label" />
+        <Label v-if="label" :value="label" :required="$attrs.required" />
 
         <Select class="mt-1" :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)"
             :items="items" :item-text="itemText" :item-value="itemValue" :without-select="withoutSelect" v-bind="$attrs" />
