@@ -2,7 +2,7 @@
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import { useMediaQuery } from "@vueuse/core";
-import { computed, defineProps, defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 
 defineComponent({
     Carousel,
