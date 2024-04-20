@@ -7,20 +7,18 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import saIcon from '@/Icons/sa.vue';
 import enIcon from '@/Icons/en.vue';
 import { Link } from '@inertiajs/vue3';
-import { onMounted, ref } from 'vue';
+import {  ref } from 'vue';
 import { useLocale } from '@/Composable/useLocale';
 import axios from 'axios'
-import Alert from '@/Components/Alert.vue';
-
 
 const showingNavigationDropdown = ref(false);
-let { locale, dir  } = useLocale()
+let { locale, dir } = useLocale()
 const changeLocale = (lang) => {
-        axios.get(route('change-locale', lang));
-        localStorage.setItem('locale', lang);
-        window.$i18n.global.locale = locale = window.locale = lang;
-        dir = window.dir = lang == 'ar' ? 'rtl' : 'ltr';
-    }
+    axios.get(route('change-locale', lang));
+    localStorage.setItem('locale', lang);
+    window.$i18n.global.locale = locale = window.locale = lang;
+    dir = window.dir = lang == 'ar' ? 'rtl' : 'ltr';
+}
 
 </script>
 
@@ -33,7 +31,7 @@ const changeLocale = (lang) => {
                     <div class="flex justify-between h-16">
                         <!-- <div class="flex w-full"> -->
                         <!-- Logo -->
-                        <div class="flex items-center w-full">
+                        <div class="flex items-center md:w-full">
                             <Link :href="route('dashboard')">
                             <ApplicationLogo class="block w-auto text-gray-800 fill-current h-9" />
                             </Link>
@@ -41,7 +39,7 @@ const changeLocale = (lang) => {
 
                         <!-- Navigation Links -->
                         <div
-                            class="justify-center hidden w-full font-bold sm:-my-px sm:ms-10 sm:flex whitespace-nowrap">
+                            class="justify-center hidden w-full font-bold sm:-my-px sm:ms-10 lg:flex whitespace-nowrap">
                             <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex whitespace-nowrap"> -->
                             <NavLink class="mx-4" :href="route('home')" :active="route().current('home')">
                                 {{ $t('home') }}
@@ -81,7 +79,7 @@ const changeLocale = (lang) => {
                         <!-- </div> -->
                         <div class="flex items-center justify-end w-full sm:sm-6">
 
-                            <div class="relative ms-3">
+                            <div class="flex items-center justify-end w-full whitespace-nowrap sm:sm-6 rtl:text-sm">
                                 <Link :href="route('login')"
                                     class="px-4 lg:px-5 py-2 lg:py-2.5 mx-2 text-white bg-gradient-to-br from-pr-400 to-pr-300 hover:bg-gradient-to-bl font-medium rounded-lg text-sm">
                                 {{ $t('login') }}
@@ -129,7 +127,7 @@ const changeLocale = (lang) => {
                         </div>
 
                         <!-- Hamburger -->
-                        <div class="flex items-center -me-2 sm:hidden">
+                        <div class="flex items-center -me-2 lg:hidden">
                             <button @click="showingNavigationDropdown = !showingNavigationDropdown"
                                 class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
                                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -149,10 +147,33 @@ const changeLocale = (lang) => {
 
                 <!-- Responsive Navigation Menu -->
                 <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
-                    class="sm:hidden">
+                    class="lg:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             {{ $t('Dashboard') }}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard')"
+                            :active="route().current('dashboard')">
+                            {{ $t('cars') }}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard')"
+                            :active="route().current('dashboard')">
+                            {{ $t('location') }}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('site.contact_us.create')"
+                            :active="route().current('site.contact_us.create')">
+                            {{ $t('contact_us') }}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink v-if="locale == 'ar'" href="#" @click="changeLocale('en')"
+                            :title="$t('en')">
+                            <span class="inline-block w-6">
+                                <enIcon />
+                            </span>
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink v-else href="#" @click="changeLocale('ar')" :title="$t('ar')">
+                            <span class="inline-block w-6">
+                                <saIcon />
+                            </span>
                         </ResponsiveNavLink>
                     </div>
 
@@ -181,7 +202,6 @@ const changeLocale = (lang) => {
                     <slot name="header" />
                 </div>
             </header>
-            <Alert/>
 
             <!-- Page Content -->
             <main>
