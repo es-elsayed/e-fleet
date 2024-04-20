@@ -1,4 +1,4 @@
-import { onMounted, ref } from 'vue';
+import { onMounted, ref,onBeforeUnmount } from 'vue';
 import axios from 'axios'
 
 
@@ -7,6 +7,10 @@ export function useLocale() {
     let dir = ref('');
 
     onMounted(() => {
+        dir.value = window.dir
+        locale.value = window.locale
+    });
+    onBeforeUnmount(() => {
         dir.value = window.dir
         locale.value = window.locale
     });

@@ -43,6 +43,7 @@ class HandleInertiaRequests extends Middleware
                 'company_address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
                 'company_phone' => ['en' =>  'company phone in english', 'ar' =>   'هاتف الشركة بالعربي'],
                 'company_tax' => ['en' =>  'company tax in english', 'ar' =>   'السجل الضريبي بالعربي'],
+                'car_list' => "grid",
             ],
         ];
     }
