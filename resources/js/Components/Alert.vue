@@ -10,7 +10,6 @@ const timeoutHandler = ref(null);
 
 const handleFlashMessage = (messageText, messageType) => {
     message.value = messageText;
-    console.log(messageType);
     color.value = `${messageType == "success" ? 'bg-green-600' : 'bg-red-600'}`;
 
     if (messageText) {

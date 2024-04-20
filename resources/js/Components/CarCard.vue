@@ -13,7 +13,6 @@ const props = defineProps({
         default: ''
     }
 })
-console.log(props.item.stars);
 
 </script>
 <template>
