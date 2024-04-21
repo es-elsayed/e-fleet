@@ -39,7 +39,31 @@
     "first_name_placeholder": "ex. John",
     "last_name_placeholder": "ex. Doe",
     "phone_placeholder": "ex. +966522412253",
-    "sended":"Message Sended Successfully!",
-    "required":"This field is required"
-
+    "sended": "Message Sended Successfully!",
+    "required": "This field is required",
+    "brand": "Brand",
+    "model": "Model",
+    "min_price": "Minimum Price",
+    "max_price": "Maximum Price",
+    "see_all": "See All",
+    "reserve": "Reserve",
+    "about_platform": {
+        "title": "Eslamco Platform",
+        "description": "Eslamco platform is the largest car booking platform in Saudi Arabia, as it allows visitors to the Sacred House of God to search and browse for a variety of cars that meet their needs, and allows users to book directly through the platform for luxury and regular cars as well as the mass transit service."
+    },
+    "follow_us": {
+        "title": "Follw Us",
+        "links": {
+            "github": "Github",
+            "linkedin": "Linkedin",
+            "x": "X (Twitter)",
+            "instagram": "Instagram",
+            "facebook": "Facebook",
+            "whatsapp": "Whatsapp"
+        }
+    },
+    "all_rights_reserved": "All Rights Reserved ",
+    "developed_by": "Designed and Developed By: ",
+    "testimonials": "Testimonials",
+    "search": "Search"
 }
