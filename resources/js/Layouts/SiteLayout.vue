@@ -7,9 +7,11 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import saIcon from '@/Icons/sa.vue';
 import enIcon from '@/Icons/en.vue';
 import { Link } from '@inertiajs/vue3';
-import {  ref } from 'vue';
+import { ref } from 'vue';
 import { useLocale } from '@/Composable/useLocale';
+import Footer from '@/Components/Includes/Footer.vue';
 import axios from 'axios'
+import ScrollUp from '@/Components/Includes/ScrollUp.vue';
 
 const showingNavigationDropdown = ref(false);
 let { locale, dir } = useLocale()
@@ -19,6 +21,7 @@ const changeLocale = (lang) => {
     window.$i18n.global.locale = locale = window.locale = lang;
     dir = window.dir = lang == 'ar' ? 'rtl' : 'ltr';
 }
+
 
 </script>
 
@@ -32,7 +35,7 @@ const changeLocale = (lang) => {
                         <!-- <div class="flex w-full"> -->
                         <!-- Logo -->
                         <div class="flex items-center md:w-full">
-                            <Link :href="route('dashboard')">
+                            <Link :href="route('home')">
                             <ApplicationLogo class="block w-auto text-gray-800 fill-current h-9" />
                             </Link>
                         </div>
@@ -44,7 +47,8 @@ const changeLocale = (lang) => {
                             <NavLink class="mx-4" :href="route('home')" :active="route().current('home')">
                                 {{ $t('home') }}
                             </NavLink>
-                            <NavLink class="mx-4" :href="route('dashboard')" :active="route().current('dashboard')">
+                            <NavLink class="mx-4" :href="route('site.cars.index')"
+                                :active="route().current('site.cars.index')">
                                 {{ $t('cars') }}
                             </NavLink>
                             <NavLink class="mx-4" :href="route('dashboard')" :active="route().current('dashboard')">
@@ -149,23 +153,21 @@ const changeLocale = (lang) => {
                 <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
                     class="lg:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            {{ $t('Dashboard') }}
+                        <ResponsiveNavLink :href="route('home')" :active="route().current('dashboard')">
+                            {{ $t('home') }}
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('dashboard')"
-                            :active="route().current('dashboard')">
+                        <ResponsiveNavLink :href="route('site.cars.index')"
+                            :active="route().current('site.cars.index')">
                             {{ $t('cars') }}
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('dashboard')"
-                            :active="route().current('dashboard')">
+                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             {{ $t('location') }}
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('site.contact_us.create')"
                             :active="route().current('site.contact_us.create')">
                             {{ $t('contact_us') }}
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink v-if="locale == 'ar'" href="#" @click="changeLocale('en')"
-                            :title="$t('en')">
+                        <ResponsiveNavLink v-if="locale == 'ar'" href="#" @click="changeLocale('en')" :title="$t('en')">
                             <span class="inline-block w-6">
                                 <enIcon />
                             </span>
@@ -208,5 +210,8 @@ const changeLocale = (lang) => {
                 <slot />
             </main>
         </div>
+        <ScrollUp />
+
+        <Footer />
     </div>
 </template>

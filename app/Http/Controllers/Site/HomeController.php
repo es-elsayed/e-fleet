@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Site\CarResource;
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
@@ -13,74 +15,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         return Inertia::render('Site/Home', [
-            'cars' => [
-                [
-                    'image_url' => 'assets/images/cars/Toyota_Camry.jpg',
-                    'discount' => '50',
-                    'brand' => 'Mercedes',
-                    'model' => '2020',
-                    'engine' => 'V12',
-                    'price_per_day' => '100',
-                    'reduce' => '20',
-                    'phone' => "00201001074075",
-                    'stars' => 3,
-                ],
-                [
-                    'image_url' => 'assets/images/cars/Honda_Civic.jpg',
-                    'discount' => '30',
-                    'brand' => 'Audi',
-                    'model' => '2021',
-                    'engine' => 'V12',
-                    'price_per_day' => '130',
-                    'reduce' => '30',
-                    'phone' => "00201001074075",
-                    'stars' => 4,
-                ],
-                [
-                    'image_url' => 'assets/images/cars/Ford_Mustang.jpg',
-                    'discount' => '50',
-                    'brand' => 'BmW',
-                    'model' => '2022',
-                    'engine' => 'V12',
-                    'price_per_day' => '120',
-                    'reduce' => '20',
-                    'phone' => "00201001074075",
-                    'stars' => 5,
-                ],
-                [
-                    'image_url' => 'assets/images/cars/BMW_X5.jpg',
-                    'discount' => '50',
-                    'brand' => 'Mercedes',
-                    'model' => '2020',
-                    'engine' => 'V12',
-                    'price_per_day' => '100',
-                    'reduce' => '20',
-                    'phone' => "00201001074075",
-                    'stars' => 3,
-                ],
-                [
-                    'image_url' => 'assets/images/cars/Mercedes-Benz_E-Class.jpg',
-                    'discount' => '30',
-                    'brand' => 'Audi',
-                    'model' => '2021',
-                    'engine' => 'V12',
-                    'price_per_day' => '130',
-                    'reduce' => '30',
-                    'phone' => "00201001074075",
-                    'stars' => 4,
-                ],
-                [
-                    'image_url' => 'assets/images/cars/Chevrolet_Malibu.jpg',
-                    'discount' => '50',
-                    'brand' => 'BmW',
-                    'model' => '2022',
-                    'engine' => 'V12',
-                    'price_per_day' => '120',
-                    'reduce' => '20',
-                    'phone' => "00201001074075",
-                    'stars' => 5,
-                ],
-            ],
+            'cars' => CarResource::collection(Car::isActive()->isAvailable()->paginate(12)),
             'sliders' => [
                 [
                     "title" => [

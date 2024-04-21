@@ -19,7 +19,7 @@ defineProps({
             <!-- title -->
             <div class="flex justify-center align-middle">
                 <hr class=" mt-8 h-0.5 w-full bg-pr-500">
-                <p v-if="title" class="p-2 mx-8 my-2 text-lg font-bold font-car text-pr-400 ">
+                <p v-if="title" class="p-2 mx-8 my-2 text-lg font-bold font-car text-pr-400 whitespace-nowrap">
                     {{ title }}
                 </p>
 

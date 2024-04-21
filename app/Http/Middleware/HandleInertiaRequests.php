@@ -39,12 +39,72 @@ class HandleInertiaRequests extends Middleware
                 'error' => $request->session()->get('error'),
             ],
             'settings' => [
-                'company_info' => ['en' =>  'company info in english', 'ar' =>   'معلومات الشركة بالعربي'],
-                'company_address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
-                'company_phone' => ['en' =>  'company phone in english', 'ar' =>   'هاتف الشركة بالعربي'],
-                'company_tax' => ['en' =>  'company tax in english', 'ar' =>   'السجل الضريبي بالعربي'],
+                'about' => [
+                    'name' => [
+                        'en' =>  'Eslamco Platfrom',
+                        'ar' =>   'منصة إسلامكو'
+                    ],
+                    'description' => [
+                        'en' =>  'Eslamco platform is the largest car booking platform in Saudi Arabia, as it allows visitors to the Sacred House of God to search and browse for a variety of cars that meet their needs, and allows users to book directly through the platform for luxury and regular cars as well as the mass transit service.',
+                        'ar' =>   '  منصة إسلامكو هي أكبر منصة لحجز السيارات في السعودية ، حيث يتيح لزوار بيت الله الحرام إمكانية  البحث والتصفح عن مجموعة متنوعة من السيارات التي تلبي إحتياجاتهم، كما يسمح للمستخدمين إمكانية الحجز المباشر عن طريق المنصة للسيارات الفاخرة والعادية وأيضًا خدمة النقل الجماعي.'
+                    ],
+                    'info' => ['en' =>  'company info in english', 'ar' =>   'معلومات الشركة بالعربي'],
+                    'address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
+                    'phone' => ['en' =>  'company phone in english', 'ar' =>   'هاتف الشركة بالعربي'],
+                    'tax' => ['en' =>  'company tax in english', 'ar' =>   'السجل الضريبي بالعربي'],
+                ],
                 'car_list' => "grid",
+                'follow_us' => [
+                    'github' => 'https://github.com/es-elsayed',
+                    'linkedin' => 'https://www.linkedin.com/in/e-elsayed/',
+                    'x' => 'https://twitter.com/Islam3bdu',
+                    'instagram' => 'https://www.instagram.com/islam.3bdu/',
+                    'facebook' => 'https://www.facebook.com/Islam.3bdu',
+                    'whatsapp' => 'https://api.whatsapp.com/send?phone=+201001074075&text=follow',
+                ]
             ],
+            'info' => [
+                'brands' => [
+                    [
+                        'id' => "1",
+                        'name' => "BMW",
+                    ],
+                    [
+                        'id' => "2",
+                        'name' => "Audi",
+                    ],
+                ],
+                'models' => [
+                    [
+                        'id' => "1",
+                        'name' => "2020",
+                    ],
+                    [
+                        'id' => "2",
+                        'name' => "2121",
+                    ],
+                ],
+                'min_price' => [
+                    [
+                        'id' => "0",
+                        'name' => "0",
+                    ],
+                    [
+                        'id' => "1000",
+                        'name' => "1000",
+                    ],
+                ],
+                'max_price' => [
+                    [
+                        'id' => "0",
+                        'name' => "0",
+                    ],
+                    [
+                        'id' => "1000",
+                        'name' => "1000",
+                    ],
+                ],
+            ]
         ];
     }
 }

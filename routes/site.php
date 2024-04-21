@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListCarController;
 use App\Http\Controllers\Site\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('contact_us', ContactUsController::class)->only('create', 'store');
+Route::resource('cars', ListCarController::class);
+Route::get('search', function (){
+    return 'hi search';
+});
