@@ -52,23 +52,23 @@ const submit = () => {
                 {{ $t('contact_desc') }}
             </p>
         </div>
-        <div class="flex flex-col justify-between max-w-screen-xl gap-12 px-8 mx-auto md:flex-row md:px-16 ">
-            <div class="order-last mb-12 md:w-1/2 md:order-first ">
+        <div class="flex flex-col justify-between max-w-screen-xl gap-12 px-8 mx-auto lg:flex-row lg:px-16 ">
+            <div class="order-last mb-12 lg:w-1/2 lg:order-first ">
                 <form @submit.prevent="submit" class="mt-6 space-y-6">
                     <div class="grid grid-cols-2 gap-6">
-                        <InputGroup v-model="form.first_name" id="first_name"  label="first_name"
+                        <InputGroup v-model="form.first_name" id="first_name" label="first_name"
                             :placeholder="$t('first_name_placeholder')" :error-message="form.errors.first_name" />
-                        <InputGroup v-model="form.last_name" id="last_name"  label="last_name"
+                        <InputGroup v-model="form.last_name" id="last_name" label="last_name"
                             :placeholder="$t('last_name_placeholder')" :error-message="form.errors.last_name" />
 
-                        <InputGroup type="email" v-model="form.email" id="email"  label="email"
+                        <InputGroup type="email" v-model="form.email" id="email" label="email"
                             placeholder="johndoe@gmail.com" :error-message="form.errors.email" />
 
-                        <InputGroup v-model="form.phone" id="phone"  label="phone"
-                            :placeholder="$t('phone_placeholder')" :error-message="form.errors.phone" />
+                        <InputGroup v-model="form.phone" id="phone" label="phone" :placeholder="$t('phone_placeholder')"
+                            :error-message="form.errors.phone" />
 
-                        <SelectGroup label="subject" v-model="form.subject"  :items="subjectTypes"
-                            :error-message="form.errors.subject"  />
+                        <SelectGroup label="subject" v-model="form.subject" :items="subjectTypes"
+                            :error-message="form.errors.subject" />
 
                         <TextareaGroup gClass="sm:col-span-2" v-model="form.message" id="message"
                             placeholder="leave_message" label="message" :error-message="form.errors.message" />
@@ -89,9 +89,8 @@ const submit = () => {
                         </svg>
                     </div>
                     <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('company_info') }}</h2>
-                    <p class="text-sm font-light text-gray-700 font-car">{{ $page.props.settings.company_info[locale] }}
+                    <p class="text-sm font-light text-gray-700 font-car">{{ $page.props.settings.about.info[locale] }}
                     </p>
-                    <!-- <p class="text-sm font-light text-gray-700 font-car">Location: Morocco</p> -->
                 </div>
                 <div>
                     <div class="w-20 p-6 mx-auto mb-3 bg-gray-200 rounded-md ">
@@ -102,10 +101,8 @@ const submit = () => {
                         </svg>
                     </div>
                     <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('company_address') }}</h2>
-                    <!-- <p class="text-sm font-light text-gray-700 font-car">DR ANABDOUR AMMELEN TIZNIT</p> -->
-                    <!-- <p class="text-sm font-light text-gray-700 font-car"> {{ $page.props.settings.company_address.ar }} </p> -->
                     <p class="text-sm font-light text-gray-700 font-car">
-                        {{ $page.props.settings.company_address[locale] }}
+                        {{ $page.props.settings.about.address[locale] }}
                     </p>
 
                 </div>
@@ -121,11 +118,9 @@ const submit = () => {
                     <p class="text-sm font-light text-gray-700 font-car">
                         {{ $t('call_us_desc') }}
                     </p>
-                    <p class="font-car text-pr-400 ">{{ $page.props.settings.company_phone[locale] }}</p>
+                    <p class="font-car text-pr-400 ">{{ $page.props.settings.about.phone[locale] }}</p>
                 </div>
-                <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8 md:hidden" />
-
-
+                <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8 lg:hidden" />
             </div>
 
         </div>
