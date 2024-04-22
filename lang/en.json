@@ -47,7 +47,7 @@
     "max_price": "Maximum Price",
     "see_all": "See All",
     "reserve": "Reserve",
-    "tax_register": "Tax Register Number {number}",
+    "tax_register": "Tax Register Number: {number}",
     "follow_us": {
         "title": "Follw Us",
         "links": {

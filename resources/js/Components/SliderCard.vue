@@ -24,25 +24,25 @@ defineProps({
             {{ item.title[locale] }}
         </h1>
         <div class="md:w-3/5 md:hidden ">
-            <img :src="item.image_url" alt="home car">
+            <img :src="item.image_url" :alt="item.alt[locale]">
         </div>
         <p class="mx-8 text-justify md:mx-0">
             {{ item.description[locale] }}
         </p>
         <div class="flex justify-center mt-12 md:justify-start md:w-2/3 me-12 ">
-            <Link :href="route('site.cars.index')">
+            <Link :href="item.action_url">
             <button
                 class="w-32 p-2 font-bold text-white border-2 border-white rounded-md bg-pr-400 hover:bg-pr-500 md:me-12 md:mx-12 mx-7 ">CARS</button>
             </Link>
-            <Link :href="route('site.contact_us.create')">
+            <!-- <Link :href="route('site.contact_us.create')">
                 <button class="w-32 p-2 text-black border-2 rounded-md border-pr-400 hover:bg-sec-400">
                     CONTACT US
                 </button>
-            </Link>
+            </Link> -->
         </div>
     </div>
     <div class="hidden md:w-3/5 md:block ">
-        <img :src="item.image_url" alt="home car">
+        <img :src="item.image_url" :alt="item.alt[locale]" class="w-full">
     </div>
 
 </template>

@@ -28,7 +28,6 @@ defineProps({
     },
 })
 
-
 </script>
 
 <template>
@@ -36,7 +35,7 @@ defineProps({
     <Head :title="$t('Dashboard')" />
 
     <SiteLayout>
-        <Carousel v-if="dir" class="max-w-screen-xl mx-auto " :dir="dir" nav-position='in' :items="sliders"
+        <Carousel v-if="dir" wrap-arround class="max-w-screen-xl mx-auto " :dir="dir" nav-position='in' :items="sliders.data"
             :num-in-lg="1" :num-in-md="1" pagination>
             <template v-slot="{ item }">
                 <SliderCard :item="item" />

@@ -47,7 +47,7 @@
     "max_price": "أعلى سعر",
     "see_all": "عرض الكل",
     "reserve": "حجز",
-    "tax_register": "رقم السجل الضريبي {number}",
+    "tax_register": "رقم السجل الضريبي: {number}",
 
     "follow_us": {
         "title": "تابعونا على",
