@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\scopeActive;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    use HasFactory;
+    use HasFactory,scopeActive;
 
     protected $fillable = [
         'title_en',
@@ -23,9 +24,4 @@ class Slider extends Model
         'is_active',
     ];
 
-
-    public function scopeIsActive($query)
-    {
-        return $query->where('is_active', 1);
-    }
 }

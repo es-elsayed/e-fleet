@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\scopeActive;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Car extends Model
 {
-    use HasFactory;
+    use HasFactory, scopeActive;
 
     protected $fillable = [
         'code',
@@ -30,10 +31,6 @@ class Car extends Model
     public function scopeIsAvailable($query)
     {
         return $query->where('is_available', 1);
-    }
-    public function scopeIsActive($query)
-    {
-        return $query->where('is_active', 1);
     }
 
     /**
