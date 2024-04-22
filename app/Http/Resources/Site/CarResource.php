@@ -19,6 +19,10 @@ class CarResource extends JsonResource
                 'en' => $this->brand->name_en,
                 'ar' => $this->brand->name_ar,
             ],
+            'name' => [
+                'en' => $this->brand->name_en ." ". $this->model_en,
+                'ar' => $this->brand->name_ar ." ". $this->model_ar,
+            ],
             'category' => [
                 'en' => $this->category->name_en,
                 'ar' => $this->category->name_ar,

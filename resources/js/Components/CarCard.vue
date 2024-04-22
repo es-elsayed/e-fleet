@@ -30,8 +30,7 @@ const props = defineProps({
         <div class="px-5 pb-5 mt-4">
             <div>
                 <h5 class="text-xl font-bold tracking-tight text-third-900">
-                    {{ item.brand[locale] }}
-                    {{ item.model[locale] }}
+                    {{ item.name[locale] }}
                 </h5>
             </div>
             <div class="flex items-center justify-between mt-2 mb-5">
