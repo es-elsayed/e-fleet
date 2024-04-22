@@ -15,8 +15,8 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name_en' => 'Normal',
-                'name_ar' => 'عادي',
+                'name_en' => 'Popular',
+                'name_ar' => 'شعبي',
                 'image' => 'normal.png',
             ],
             [

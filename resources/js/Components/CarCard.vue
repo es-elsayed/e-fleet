@@ -35,6 +35,9 @@ const props = defineProps({
                 </h5>
             </div>
             <div class="flex items-center justify-between mt-2 mb-5">
+                <p class="font-bold text-md text-slate-900">
+                    {{ item.category[locale] }}
+                </p>
                 <!-- <p>
                     <span class="text-3xl font-bold text-slate-900">{{ item.price_per_day }}</span>
                     <span class="text-sm line-through text-slate-900">

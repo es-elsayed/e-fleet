@@ -21,7 +21,7 @@ class CarSeeder extends Seeder
         $myCars = [
             [
                 'brand_id' => $brands['toyota'],
-                'category_id' => $categories['Normal'],
+                'category_id' => $categories['Popular'],
                 'model_en' => 'Camry',
                 'model_ar' => 'كامري',
                 'image' => 'assets/images/site/cars/toyota_camry.png',
@@ -43,7 +43,7 @@ class CarSeeder extends Seeder
             ],
             [
                 'brand_id' => $brands['hyundai'],
-                'category_id' => $categories['Normal'],
+                'category_id' => $categories['Popular'],
                 'model_en' => 'Van H1',
                 'model_ar' => 'فان إتش وان',
                 'image' => 'assets/images/cars/h1.png',
@@ -65,7 +65,7 @@ class CarSeeder extends Seeder
             ],
             [
                 'brand_id' => $brands['gmc'],
-                'category_id' => $categories['Normal'],
+                'category_id' => $categories['Popular'],
                 'model_en' => '2020',
                 'model_ar' => '2020',
                 'image' => 'assets/images/cars/gmc-2020.png',
