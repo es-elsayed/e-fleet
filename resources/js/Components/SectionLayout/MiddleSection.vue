@@ -19,10 +19,10 @@ defineProps({
     <!-- middle section -->
     <div class="flex flex-col items-center bg-white md:flex-row rounded-xl">
         <div class="w-full px-5 py-8 space-y-4 md:space-y-8 md:px-8" :class="{ 'md:w-1/2': image_url }">
-            <h5 class="text-3xl font-bold text-center">
+            <h5 class="text-3xl font-bold text-center text-pr-400">
                 {{ title }}
             </h5>
-            <p class="text-xl leading-10 text-justify text-gray-600 break-normal">
+            <p class="text-xl leading-10 text-justify break-normal text-third-600">
                 {{ description }}
             </p>
         </div>

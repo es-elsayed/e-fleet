@@ -32,7 +32,7 @@ defineProps({
     <div :class="gClass">
         <Label v-if="label" :value="label" :required="$attrs.required" />
         <textarea
-            class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-pr-500 focus:ring-pr-500"
+            class="block w-full mt-1 border-third-300 rounded-md shadow-sm focus:border-pr-500 focus:ring-pr-500"
             :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input" rows="10" :placeholder="$t(placeholder)"
             v-bind="$attrs" />
         <Error v-if="errorMessage" class="mt-1" :message="errorMessage" />

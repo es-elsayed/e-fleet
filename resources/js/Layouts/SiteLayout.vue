@@ -27,8 +27,8 @@ const changeLocale = (lang) => {
 
 <template>
     <div :dir="dir">
-        <div class="min-h-screen bg-gray-100">
-            <nav class="sticky top-0 z-50 w-full px-4 py-2 border-gray-200 bg-sec-600 lg:px-6 dark:bg-gray-800 ">
+        <div class="min-h-screen bg-third-100">
+            <nav class="sticky top-0 z-50 w-full px-4 py-2 border-third-200 bg-sec-600 lg:px-6 dark:bg-third-800 ">
                 <!-- Primary Navigation Menu -->
                 <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -36,7 +36,7 @@ const changeLocale = (lang) => {
                         <!-- Logo -->
                         <div class="flex items-center md:w-full">
                             <Link :href="route('home')">
-                            <ApplicationLogo class="block w-auto text-gray-800 fill-current h-9" />
+                            <ApplicationLogo class="block w-auto text-third-800 fill-current h-9" />
                             </Link>
                         </div>
 
@@ -88,13 +88,13 @@ const changeLocale = (lang) => {
                                     class="px-4 lg:px-5 py-2 lg:py-2.5 mx-2 text-white bg-gradient-to-br from-pr-400 to-pr-300 hover:bg-gradient-to-bl font-medium rounded-lg text-sm">
                                 {{ $t('login') }}
                                 </Link>
-                                <!-- class="inline-block mx-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> -->
+                                <!-- class="inline-block mx-4 font-semibold text-third-600 hover:text-third-900 dark:text-third-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> -->
 
-                                <!-- class="inline-block mx-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> -->
+                                <!-- class="inline-block mx-4 font-semibold text-third-600 hover:text-third-900 dark:text-third-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> -->
                                 <Link :href="route('register')"
-                                    class="mx-2 relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 ">
+                                    class="mx-2 relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-third-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-third-900 ">
                                 <span
-                                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-sec-600 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-sec-600 dark:bg-third-900 rounded-md group-hover:bg-opacity-0">
                                     {{ $t('register') }}
                                 </span>
                                 </Link>
@@ -107,7 +107,7 @@ const changeLocale = (lang) => {
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
-                                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-third-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-third-700 focus:outline-none">
                                                 {{ $page.props.auth.user.name }}
 
                                                 <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ const changeLocale = (lang) => {
                         <!-- Hamburger -->
                         <div class="flex items-center -me-2 lg:hidden">
                             <button @click="showingNavigationDropdown = !showingNavigationDropdown"
-                                class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                                class="inline-flex items-center justify-center p-2 text-third-400 transition duration-150 ease-in-out rounded-md hover:text-third-500 hover:bg-third-100 focus:outline-none focus:bg-third-100 focus:text-third-500">
                                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path :class="{
         hidden: showingNavigationDropdown,
@@ -180,12 +180,12 @@ const changeLocale = (lang) => {
                     </div>
 
                     <!-- Responsive Settings Options -->
-                    <div v-if="$page.props.auth.user" class="pt-4 pb-1 border-t border-gray-200">
+                    <div v-if="$page.props.auth.user" class="pt-4 pb-1 border-t border-third-200">
                         <div class="px-4">
-                            <div class="text-base font-medium text-gray-800">
+                            <div class="text-base font-medium text-third-800">
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div class="text-sm font-medium text-gray-500">{{ $page.props.auth.user.email }}</div>
+                            <div class="text-sm font-medium text-third-500">{{ $page.props.auth.user.email }}</div>
                         </div>
 
                         <div class="mt-3 space-y-1">

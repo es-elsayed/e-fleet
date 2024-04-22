@@ -18,7 +18,7 @@ const props = defineProps({
 
 </script>
 <template>
-    <div :class="'relative flex flex-col w-full max-w-md overflow-hidden bg-white border border-gray-100 rounded-lg shadow-md md:m-4 ' + gClass"
+    <div :class="'relative flex flex-col w-full max-w-md overflow-hidden bg-white border border-third-100 rounded-lg shadow-md md:m-4 ' + gClass"
         v-bind="$attrs">
         <Link class="relative flex mx-3 mt-3 overflow-hidden h-60 rounded-xl" href="#">
         <img loading="lazy" class="object-cover w-full" :src="item.image_url" alt="product image" />

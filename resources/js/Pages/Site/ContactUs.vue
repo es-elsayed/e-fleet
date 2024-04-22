@@ -45,10 +45,10 @@ const submit = () => {
     <SiteLayout>
 
         <div class="mt-16">
-            <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-gray-900 font-car">
+            <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-third-900 font-car">
                 {{ $t('contact_us') }}
             </h2>
-            <p class="mb-8 font-light text-center text-gray-500 font-car lg:mb-16 dark:text-gray-400 sm:text-xl">
+            <p class="mb-8 font-light text-center text-third-500 font-car lg:mb-16 dark:text-third-400 sm:text-xl">
                 {{ $t('contact_desc') }}
             </p>
         </div>
@@ -81,46 +81,46 @@ const submit = () => {
             </div>
             <div class="grid gap-4 mx-auto text-center ">
                 <div>
-                    <div class="w-20 p-6 mx-auto mb-3 bg-gray-200 rounded-md ">
+                    <div class="w-20 p-6 mx-auto mb-3 bg-third-200 rounded-md ">
                         <svg style="fill: #60646c" id="o" xmlns="http://www.w3.org/2000/svg" height="2em"
                             viewBox="0 0 512 512">
                             <path
                                 d="M0 32C0 14.3 14.3 0 32 0H480c17.7 0 32 14.3 32 32s-14.3 32-32 32V448c17.7 0 32 14.3 32 32s-14.3 32-32 32H304V464c0-26.5-21.5-48-48-48s-48 21.5-48 48v48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32V64C14.3 64 0 49.7 0 32zm96 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H112c-8.8 0-16 7.2-16 16zM240 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H240zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H368c-8.8 0-16 7.2-16 16zM112 192c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H112zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H368zM328 384c13.3 0 24.3-10.9 21-23.8c-10.6-41.5-48.2-72.2-93-72.2s-82.5 30.7-93 72.2c-3.3 12.8 7.8 23.8 21 23.8H328z" />
                         </svg>
                     </div>
-                    <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('company_info') }}</h2>
-                    <p class="text-sm font-light text-gray-700 font-car">{{ $page.props.about.info[locale] }}
+                    <h2 class="text-lg font-bold text-third-800 font-car">{{ $t('company_info') }}</h2>
+                    <p class="text-sm font-light text-third-700 font-car">{{ $page.props.about.info[locale] }}
                     </p>
                 </div>
                 <div>
-                    <div class="w-20 p-6 mx-auto mb-3 bg-gray-200 rounded-md ">
+                    <div class="w-20 p-6 mx-auto mb-3 bg-third-200 rounded-md ">
                         <svg style="fill: #60646c" id="o" xmlns="http://www.w3.org/2000/svg" height="2em"
                             viewBox="0 0 512 512">
                             <path
                                 d="M0 32C0 14.3 14.3 0 32 0H480c17.7 0 32 14.3 32 32s-14.3 32-32 32V448c17.7 0 32 14.3 32 32s-14.3 32-32 32H304V464c0-26.5-21.5-48-48-48s-48 21.5-48 48v48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32V64C14.3 64 0 49.7 0 32zm96 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H112c-8.8 0-16 7.2-16 16zM240 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H240zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H368c-8.8 0-16 7.2-16 16zM112 192c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H112zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H368zM328 384c13.3 0 24.3-10.9 21-23.8c-10.6-41.5-48.2-72.2-93-72.2s-82.5 30.7-93 72.2c-3.3 12.8 7.8 23.8 21 23.8H328z" />
                         </svg>
                     </div>
-                    <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('company_address') }}</h2>
-                    <p class="text-sm font-light text-gray-700 font-car">
+                    <h2 class="text-lg font-bold text-third-800 font-car">{{ $t('company_address') }}</h2>
+                    <p class="text-sm font-light text-third-700 font-car">
                         {{ $page.props.about.address[locale] }}
                     </p>
 
                 </div>
                 <div>
-                    <div class="w-20 p-6 mx-auto mb-3 bg-gray-200 rounded-md ">
+                    <div class="w-20 p-6 mx-auto mb-3 bg-third-200 rounded-md ">
                         <svg style="fill: #60646c" id="o" xmlns="http://www.w3.org/2000/svg" height="2em"
                             viewBox="0 0 512 512">
                             <path
                                 d="M0 32C0 14.3 14.3 0 32 0H480c17.7 0 32 14.3 32 32s-14.3 32-32 32V448c17.7 0 32 14.3 32 32s-14.3 32-32 32H304V464c0-26.5-21.5-48-48-48s-48 21.5-48 48v48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32V64C14.3 64 0 49.7 0 32zm96 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H112c-8.8 0-16 7.2-16 16zM240 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H240zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H368c-8.8 0-16 7.2-16 16zM112 192c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H112zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H368zM328 384c13.3 0 24.3-10.9 21-23.8c-10.6-41.5-48.2-72.2-93-72.2s-82.5 30.7-93 72.2c-3.3 12.8 7.8 23.8 21 23.8H328z" />
                         </svg>
                     </div>
-                    <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('call_us') }}</h2>
-                    <p class="text-sm font-light text-gray-700 font-car">
+                    <h2 class="text-lg font-bold text-third-800 font-car">{{ $t('call_us') }}</h2>
+                    <p class="text-sm font-light text-third-700 font-car">
                         {{ $t('call_us_desc') }}
                     </p>
                     <p class="font-car text-pr-400 ">{{ $page.props.about.phone[locale] }}</p>
                 </div>
-                <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8 lg:hidden" />
+                <hr class="my-6 border-third-700 sm:mx-auto lg:my-8 lg:hidden" />
             </div>
 
         </div>

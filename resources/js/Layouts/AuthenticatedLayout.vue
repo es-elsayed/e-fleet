@@ -25,8 +25,8 @@ const changeLocale = (lang) => {
 
 <template>
     <div :dir="dir">
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+        <div class="min-h-screen bg-third-100">
+            <nav class="bg-white border-b border-third-100">
                 <!-- Primary Navigation Menu -->
                 <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -34,7 +34,7 @@ const changeLocale = (lang) => {
                             <!-- Logo -->
                             <div class="flex items-center shrink-0">
                                 <Link :href="route('home')">
-                                <ApplicationLogo class="block w-auto text-gray-800 fill-current h-9" />
+                                <ApplicationLogo class="block w-auto text-third-800 fill-current h-9" />
                                 </Link>
                             </div>
 
@@ -48,7 +48,7 @@ const changeLocale = (lang) => {
                         <!-- <div class="flex items-center justify-end w-full sm:sm-6">
                             <div class="relative ms-3">
                                 <select @change="changeLocale" v-model="locale"
-                                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    class="block w-full text-sm text-third-900 border border-third-300 rounded-lg bg-third-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-third-700 dark:border-third-600 dark:placeholder-third-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                     <option value="en" :selected="locale == 'en'">{{ $t('en') }}</option>
                                     <option value="ar" :selected="locale == 'ar'">{{ $t('ar') }}</option>
                                 </select>
@@ -71,7 +71,7 @@ const changeLocale = (lang) => {
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
-                                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-third-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-third-700 focus:outline-none">
                                                 {{ $page.props.auth.user.name }}
 
                                                 <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ const changeLocale = (lang) => {
                         <!-- Hamburger -->
                         <div class="flex items-center -me-2 sm:hidden">
                             <button @click="showingNavigationDropdown = !showingNavigationDropdown"
-                                class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                                class="inline-flex items-center justify-center p-2 text-third-400 transition duration-150 ease-in-out rounded-md hover:text-third-500 hover:bg-third-100 focus:outline-none focus:bg-third-100 focus:text-third-500">
                                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path :class="{
         hidden: showingNavigationDropdown,
@@ -123,12 +123,12 @@ const changeLocale = (lang) => {
                     </div>
 
                     <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div class="pt-4 pb-1 border-t border-third-200">
                         <div class="px-4">
-                            <div class="text-base font-medium text-gray-800">
+                            <div class="text-base font-medium text-third-800">
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div class="text-sm font-medium text-gray-500">{{ $page.props.auth.user.email }}</div>
+                            <div class="text-sm font-medium text-third-500">{{ $page.props.auth.user.email }}</div>
                         </div>
 
                         <div class="mt-3 space-y-1">

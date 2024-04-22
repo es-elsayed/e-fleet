@@ -13,7 +13,7 @@ defineProps({
 
 <template>
     <div class="mx-auto text-center rounded-md lg:bg-white lg:py-8">
-        <h3 class="mb-4 text-2xl md:text-3xl" v-if="title">
+        <h3 class="mb-4 text-2xl md:text-3xl text-pr-400" v-if="title">
             {{ title }}
         </h3>
         <p class="mb-4 text-lg md:text-xl" v-if="description">
