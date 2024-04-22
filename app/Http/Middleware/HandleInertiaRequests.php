@@ -38,21 +38,22 @@ class HandleInertiaRequests extends Middleware
                 'success' => $request->session()->get('success'),
                 'error' => $request->session()->get('error'),
             ],
-            'settings' => [
-                'about' => [
-                    'name' => [
-                        'en' =>  'Eslamco Platfrom',
-                        'ar' =>   'منصة إسلامكو'
-                    ],
-                    'description' => [
-                        'en' =>  'Eslamco platform is the largest car booking platform in Saudi Arabia, as it allows visitors to the Sacred House of God to search and browse for a variety of cars that meet their needs, and allows users to book directly through the platform for luxury and regular cars as well as the mass transit service.',
-                        'ar' =>   '  منصة إسلامكو هي أكبر منصة لحجز السيارات في السعودية ، حيث يتيح لزوار بيت الله الحرام إمكانية  البحث والتصفح عن مجموعة متنوعة من السيارات التي تلبي إحتياجاتهم، كما يسمح للمستخدمين إمكانية الحجز المباشر عن طريق المنصة للسيارات الفاخرة والعادية وأيضًا خدمة النقل الجماعي.'
-                    ],
-                    'info' => ['en' =>  'company info in english', 'ar' =>   'معلومات الشركة بالعربي'],
-                    'address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
-                    'phone' => ['en' =>  'company phone in english', 'ar' =>   'هاتف الشركة بالعربي'],
-                    'tax' => ['en' =>  'company tax in english', 'ar' =>   'السجل الضريبي بالعربي'],
+            'about' => [
+                'tax_register' => "101044524553",
+                'name' => [
+                    'en' =>  'Eslamco Platfrom',
+                    'ar' =>   'منصة إسلامكو'
                 ],
+                'description' => [
+                    'en' =>  'Eslamco platform is the largest car booking platform in Saudi Arabia, as it allows visitors to the Sacred House of God to search and browse for a variety of cars that meet their needs, and allows users to book directly through the platform for luxury and regular cars as well as the mass transit service.',
+                    'ar' =>   '  منصة إسلامكو هي أكبر منصة لحجز السيارات في السعودية ، حيث يتيح لزوار بيت الله الحرام إمكانية  البحث والتصفح عن مجموعة متنوعة من السيارات التي تلبي إحتياجاتهم، كما يسمح للمستخدمين إمكانية الحجز المباشر عن طريق المنصة للسيارات الفاخرة والعادية وأيضًا خدمة النقل الجماعي.'
+                ],
+                'info' => ['en' =>  'company info in english', 'ar' =>   'معلومات الشركة بالعربي'],
+                'address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
+                'phone' => ['en' =>  'company phone in english', 'ar' =>   'هاتف الشركة بالعربي'],
+                'tax' => ['en' =>  'company tax in english', 'ar' =>   'السجل الضريبي بالعربي'],
+            ],
+            'settings' => [
                 'car_list' => "grid",
                 'follow_us' => [
                     'github' => 'https://github.com/es-elsayed',

@@ -6,6 +6,7 @@ import SectionCard from "@/Components/SectionCard.vue";
 import CarCard from "@/Components/CarCard.vue";
 import GridCard from "@/Components/SectionLayout/GridCard.vue";
 import MiddleSection from "@/Components/SectionLayout/MiddleSection.vue";
+import PartiesSection from "@/Components/SectionLayout/PartiesSection.vue";
 import SliderCard from "@/Components/SliderCard.vue";
 import TestimonialCard from "@/Components/Cards/TestimonialCard.vue";
 import { Link } from '@inertiajs/vue3';
@@ -61,12 +62,26 @@ defineProps({
             </template>
         </section-card>
 
-        <middle-section :title="$page.props.settings.about.name[locale]"
-            :description="$page.props.settings.about.description[locale]" image_url="assets/images/middle.png" />
+        <section-card>
+            <middle-section :title="$page.props.about.name[locale]"
+                :description="$page.props.about.description[locale]" image_url="assets/images/middle.png" />
+        </section-card>
+
+        <section-card>
+            <parties-section v-if="$page.props.about.tax_register" :title="$t('tax_register',{number:$page.props.about.tax_register })"
+                :description="$t('reserve_your_car.description')">
+                <template #actions>
+                    <Link :href="route('site.cars.index')"
+                        class="p-2 text-2xl text-black border-2 rounded-md border-pr-400 hover:bg-pr-400 hover:text-white whitespace-nowrap">
+                    {{ $t('reserve_your_car.now') }}
+                    </Link>
+                </template>
+            </parties-section>
+        </section-card>
 
         <section-card v-if="testimonials" :title="$t('testimonials')">
-            <Carousel wrap-arround nav-position='out' :items="testimonials.data" :num-in-lg="3" :transition="2000" navigation
-                pagination>
+            <Carousel wrap-arround nav-position='out' :items="testimonials.data" :num-in-lg="3" :transition="2000"
+                navigation pagination>
                 <template v-slot="{ item }">
                     <TestimonialCard :item="item" />
                 </template>

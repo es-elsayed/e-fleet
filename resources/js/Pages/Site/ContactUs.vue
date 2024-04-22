@@ -89,7 +89,7 @@ const submit = () => {
                         </svg>
                     </div>
                     <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('company_info') }}</h2>
-                    <p class="text-sm font-light text-gray-700 font-car">{{ $page.props.settings.about.info[locale] }}
+                    <p class="text-sm font-light text-gray-700 font-car">{{ $page.props.about.info[locale] }}
                     </p>
                 </div>
                 <div>
@@ -102,7 +102,7 @@ const submit = () => {
                     </div>
                     <h2 class="text-lg font-bold text-gray-800 font-car">{{ $t('company_address') }}</h2>
                     <p class="text-sm font-light text-gray-700 font-car">
-                        {{ $page.props.settings.about.address[locale] }}
+                        {{ $page.props.about.address[locale] }}
                     </p>
 
                 </div>
@@ -118,7 +118,7 @@ const submit = () => {
                     <p class="text-sm font-light text-gray-700 font-car">
                         {{ $t('call_us_desc') }}
                     </p>
-                    <p class="font-car text-pr-400 ">{{ $page.props.settings.about.phone[locale] }}</p>
+                    <p class="font-car text-pr-400 ">{{ $page.props.about.phone[locale] }}</p>
                 </div>
                 <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8 lg:hidden" />
             </div>
