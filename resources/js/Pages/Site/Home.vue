@@ -4,7 +4,10 @@ import { Head } from '@inertiajs/vue3';
 import Carousel from "@/Components/Carousel.vue";
 import SectionCard from "@/Components/SectionCard.vue";
 import CarCard from "@/Components/CarCard.vue";
+import GridCard from "@/Components/SectionLayout/GridCard.vue";
+import MiddleSection from "@/Components/SectionLayout/MiddleSection.vue";
 import SliderCard from "@/Components/SliderCard.vue";
+import TestimonialCard from "@/Components/Cards/TestimonialCard.vue";
 import { Link } from '@inertiajs/vue3';
 import { useLocale } from '@/Composable/useLocale';
 let { locale, dir } = useLocale()
@@ -18,7 +21,12 @@ defineProps({
         type: Object,
         required: true
     },
+    testimonials: {
+        type: Object,
+        required: false
+    },
 })
+
 
 </script>
 
@@ -34,24 +42,35 @@ defineProps({
             </template>
         </Carousel>
 
-        <section-card :title="$t('cars')" class="my-16 bg-sec-400"
-            description="lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum">
-            <Carousel v-if="$page.props.settings.car_list == 'slider'" nav-position='out' :items="cars" :num-in-lg="4"
-                :num-in-md="2" navigation pagination>
+        <section-card :title="$t('cars')" class="my-16 bg-sec-400" description="">
+            <Carousel v-if="$page.props.settings.car_list == 'slider'" nav-position='out' :items="cars.data"
+                :num-in-lg="4" :num-in-md="2" navigation pagination>
                 <template v-slot="{ item }">
                     <car-card :item="item" />
                 </template>
             </Carousel>
-            <div v-else
-                class="grid items-center justify-center max-w-screen-xl gap-4 p-2 mx-auto text-center md:grid-cols-3 md:ps-4">
-                <car-card v-for="item in cars" :key="item" :item="item" />
-            </div>
+            <grid-card v-else
+                class="grid items-center justify-center max-w-screen-xl gap-4 p-2 mx-auto text-center lg:grid-cols-3 md:grid-cols-2 lg:ps-4">
+                <car-card v-for="item in cars.data" :key="item" :item="item" />
+            </grid-card>
             <template #actions>
-                <Link href="#"
-                    class="w-16 p-1 text-black border-2 rounded-md border-pr-400 hover:bg-pr-400 hover:text-white">
-                See All
+                <Link :href="route('site.cars.index')"
+                    class="p-2 text-2xl text-black border-2 rounded-md border-pr-400 hover:bg-pr-400 hover:text-white whitespace-nowrap">
+                {{ $t('see_all') }}
                 </Link>
             </template>
+        </section-card>
+
+        <middle-section :title="$page.props.settings.about.name[locale]"
+            :description="$page.props.settings.about.description[locale]" image_url="assets/images/middle.png" />
+
+        <section-card v-if="testimonials" :title="$t('testimonials')">
+            <Carousel wrap-arround nav-position='out' :items="testimonials.data" :num-in-lg="3" :transition="2000" navigation
+                pagination>
+                <template v-slot="{ item }">
+                    <TestimonialCard :item="item" />
+                </template>
+            </Carousel>
         </section-card>
 
     </SiteLayout>
