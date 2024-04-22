@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Site\CarResource;
+use App\Http\Resources\Site\TestimonialResource;
 use App\Models\Car;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +18,7 @@ class HomeController extends Controller
     {
         return Inertia::render('Site/Home', [
             'cars' => CarResource::collection(Car::isActive()->isAvailable()->paginate(12)),
+            'testimonials' => TestimonialResource::collection(Testimonial::confirmed()->inRandomOrder()->paginate(15)),
             'sliders' => [
                 [
                     "title" => [
