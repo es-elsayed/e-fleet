@@ -29,18 +29,18 @@ const props = defineProps({
         </Link>
         <div class="px-5 pb-5 mt-4">
             <div>
-                <h5 class="text-xl font-bold tracking-tight text-slate-900">
+                <h5 class="text-xl font-bold tracking-tight text-third-900">
                     {{ item.brand[locale] }}
                     {{ item.model[locale] }}
                 </h5>
             </div>
             <div class="flex items-center justify-between mt-2 mb-5">
-                <p class="font-bold text-md text-slate-900">
+                <p class="font-bold text-md text-third-900">
                     {{ item.category[locale] }}
                 </p>
                 <!-- <p>
-                    <span class="text-3xl font-bold text-slate-900">{{ item.price_per_day }}</span>
-                    <span class="text-sm line-through text-slate-900">
+                    <span class="text-3xl font-bold text-third-900">{{ item.price_per_day }}</span>
+                    <span class="text-sm line-through text-third-900">
                         {{ parseInt((item.price_per_day * 100) / (100 - item.reduce)) }}
                     </span>
                 </p> -->
@@ -49,7 +49,7 @@ const props = defineProps({
             </div>
             <a :href="`https://api.whatsapp.com/send?phone=${item.phone}&text=reservation car: ${item.brand} ${item.model}`"
                 target="_blank"
-                class="flex items-center justify-center rounded-md bg-slate-900 hover:bg-pr-400 px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
+                class="flex items-center justify-center rounded-md bg-third-900 hover:bg-pr-400 px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
                 <svg id="thisicon" class="w-6 h-6 mr-4 fill-white" xmlns="http://www.w3.org/2000/svg" height="1em"
                     viewBox="0 0 512 512">
                     <path

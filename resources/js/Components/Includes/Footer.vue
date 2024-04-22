@@ -6,7 +6,7 @@ let { locale, dir } = useLocale()
 
 </script>
 <template>
-    <footer class="px-4 bg-gray-800 sm:p-6">
+    <footer class="px-4 bg-third-900 sm:p-6">
         <div class="relative max-w-screen-xl pt-10 mx-auto ">
             <div class="text-center lg:flex lg:justify-between lg:text-start">
 
@@ -17,11 +17,11 @@ let { locale, dir } = useLocale()
                         </span>
                         &nbsp;
                         <h2 class="inline-block mb-6 text-2xl font-semibold text-white uppercase align-middle">
-                            {{ $page.props.settings.about.name[locale] }}
+                            {{ $page.props.about.name[locale] }}
                         </h2>
                     </div>
                     <p class="mt-4 text-gray-400 lg:text-justify">
-                        {{ $page.props.settings.about.description[locale] }}
+                        {{ $page.props.about.description[locale] }}
                     </p>
                 </div>
                 <div class="w-full mb-6 rtl:lg:ml-8 ltr:lg:mr-8">
@@ -86,7 +86,7 @@ let { locale, dir } = useLocale()
 
             </div>
 
-            <hr class="border-gray-700  sm:mx-auto lg:mb-8" />
+            <hr class="border-gray-700 sm:mx-auto lg:mb-8" />
 
             <div class="flex flex-col items-center justify-between py-8 space-y-4 text-white lg:flex-row">
                 <div class="flex mt-4 sm:justify-center lg:text-center sm:mt-0">
@@ -154,7 +154,7 @@ let { locale, dir } = useLocale()
                 <div class="text-sm text-gray-400 lg:text-center md:ms-0 sm:mt-0">
                     {{ $t('all_rights_reserved') }}
                     <a href="https://portfolio.eslamco.com" target='_blank' class="hover:underline text-pr-500">
-                        {{ $page.props.settings.about.name[locale] }} © 2024
+                        {{ $page.props.about.name[locale] }} © 2024
                     </a>
                 </div>
                 <div class="text-sm text-gray-400 lg:text-center md:ms-0 sm:mt-0">
