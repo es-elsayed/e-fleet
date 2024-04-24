@@ -40,6 +40,16 @@ class DestinationSeeder extends Seeder
                 'name_ar' => "الطائف",
                 'is_active' => 1
             ],
+            [
+                'name_en' => "Mazarat Mecca",
+                'name_ar' => "مزارات مكة",
+                'is_active' => 1
+            ],
+            [
+                'name_en' => "Mazarat Madinah",
+                'name_ar' => "مزارات المدينة",
+                'is_active' => 1
+            ],
         ];
     }
 }

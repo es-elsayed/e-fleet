@@ -50,16 +50,13 @@ const props = defineProps({
             </div>
             <div class="flex justify-between">
                 <Link :href="route('site.reservations.create', { car: item.id })"
-                class="flex items-center justify-center rounded-md bg-third-900 hover:bg-pr-400 px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
+                class="flex items-center justify-center rounded-md bg-third-900 hover:opacity-75 px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
                 {{ $t('reserve_direct') }}
                 &nbsp; &nbsp;
                 <calender-icon />
             </Link>
-            <!-- <Link :href="route('site.reservations.create', { car: item.id })" -->
             <a :href="`https://api.whatsapp.com/send?phone=${item.phone}&text=reservation car: ${item.brand[locale]} ${item.model[locale]}`"
-                    target="_blank" class="flex items-center justify-center rounded-md bg-third-900 hover:bg-pr-400 px-5 py-2.5 text-center text-sm font-medium text-white hover:text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
-                <!-- {{ $t('reserve_whatsapp') }}
-                &nbsp; &nbsp; -->
+                    target="_blank" class="flex items-center justify-center rounded-md bg-third-900 hover:opacity-75 px-5 py-2.5 text-center text-sm font-medium text-white hover:text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
                 <whatsapp-icon class="fill-green-600" />
                 </a>
             </div>

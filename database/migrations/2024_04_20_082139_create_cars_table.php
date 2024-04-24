@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\CarPricing;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->boolean('is_available')->default(1);
             $table->integer('reduce')->default(0);
             $table->integer('stars')->default(0);
+            $table->enum('pricing_type',CarPricing::values())->default(CarPricing::Normal);
             $table->timestamps();
         });
     }

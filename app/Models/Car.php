@@ -6,6 +6,7 @@ use App\Traits\scopeActive;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends Model
 {
@@ -22,6 +23,7 @@ class Car extends Model
         'is_available',
         'reduce',
         'stars',
+        'pricing_type'
     ];
 
     public function reservations()
@@ -52,5 +54,18 @@ class Car extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    /**
+     * Get all of the carPricings for the Car
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    // public function carPricings(): HasMany
+    // {
+    //     return $this->hasMany(CarPricing::class, 'car_id', 'id');
+    // }
 
+    // public function scopeCurrentPrice($query)
+    // {
+    //     return $query->carPricings()->where('type', $this->pricing_type);
+    // }
 }
