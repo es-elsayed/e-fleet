@@ -24,21 +24,38 @@
     "Car": "السيارة",
     "Cancelation": "إلغاء الحجز",
     "Other": "أخرى",
-    "select_option": "حدد إختيار",
+    "Select Option": "حدد إختيار",
+    "Select": "حدد {name}",
     "first_name": "الإسم الأول",
     "last_name": "الإسم الأخير",
+    "full_name": "الإسم بالكامل",
     "phone": "رقم الهاتف",
     "subject": "الموضوع",
     "message": "الرسالة",
+    "note": "ملاحظة",
     "leave_message": "أترك رسالة",
+    "leave_note": "أترك ملاحظتك",
     "send_message": "إرسال الرسالة",
     "company_info": "بيانات الشركة",
     "company_address": "إرسال الرسالة",
     "call_us": "تواصل معنا:",
     "call_us_desc": "تواصل معنا للتحدث لأحد أعضاء الفريق، نحن دائمًا سعداء بالمساعدة.",
-    "first_name_placeholder": "مثال: أحمد",
-    "last_name_placeholder": "مثال: محمد",
-    "phone_placeholder": "مثال: +966522412253",
+    "people_number": "عدد الركاب",
+
+    "placeholder": {
+        "first_name": "مثال: أحمد",
+        "last_name": "مثال: محمد",
+        "full_name": "مثال. أحمد محمد",
+        "phone": "مثال: +966522412253",
+        "people_number": "مثال: 5"
+    },
+
+    "from_destination": "مكان الركوب",
+    "from_adderss": "مكان الركوب بالتفصيل",
+    "to_destination": "مكان النزول",
+    "to_adderss": "مكان النزول بالتفصيل",
+    "customer_arrived_at": "موعود وصولكم",
+    "driver_arrived_at": "موعد وصولنا",
     "sended": "تم إرسال الرسالة بنجاح!",
     "required": "هذا الحقل مطلوب",
     "brand": "الماركة",
@@ -46,7 +63,8 @@
     "min_price": "أقل سعر",
     "max_price": "أعلى سعر",
     "see_all": "عرض الكل",
-    "reserve": "حجز",
+    "reserve_direct": "حجز مباشر",
+    "reserve_whatsapp": "حجز واتساب",
     "tax_register": "رقم السجل الضريبي: {number}",
 
     "follow_us": {
@@ -65,8 +83,15 @@
     "testimonials": "أراء الزوار",
     "reserve_your_car": {
         "title": "إحجز سيارتك",
-        "now" : "إحجز الآن",
+        "now": "إحجز الآن",
         "description": "احجز سيارتك من الشركة مباشرة بعيدًا عن السماسرة، فقط احجز سيارتك الآن ودع الباقي علينا."
     },
+    "car_type": "نوع السيارة",
+    "reservation": "الحجز",
+    "reservation_success": "تمام الحجز",
+    "order_info": "بيانات الطلب",
+    "welcome_message": "مرحبًا: {name}",
+    "res_code_ref": "كود الحجز المرجعي هو: {code}",
+
     "search": "بحث"
 }

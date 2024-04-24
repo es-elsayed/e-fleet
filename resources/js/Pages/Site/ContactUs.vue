@@ -57,14 +57,14 @@ const submit = () => {
                 <form @submit.prevent="submit" class="mt-6 space-y-6">
                     <div class="grid grid-cols-2 gap-6">
                         <InputGroup v-model="form.first_name" id="first_name" label="first_name"
-                            :placeholder="$t('first_name_placeholder')" :error-message="form.errors.first_name" />
+                            :placeholder="$t('placeholder.first_name')" :error-message="form.errors.first_name" />
                         <InputGroup v-model="form.last_name" id="last_name" label="last_name"
-                            :placeholder="$t('last_name_placeholder')" :error-message="form.errors.last_name" />
+                            :placeholder="$t('placeholder.last_name')" :error-message="form.errors.last_name" />
 
                         <InputGroup type="email" v-model="form.email" id="email" label="email"
                             placeholder="johndoe@gmail.com" :error-message="form.errors.email" />
 
-                        <InputGroup v-model="form.phone" id="phone" label="phone" :placeholder="$t('phone_placeholder')"
+                        <InputGroup v-model="form.phone" id="phone" label="phone" :placeholder="$t('placeholder.phone')"
                             :error-message="form.errors.phone" />
 
                         <SelectGroup label="subject" v-model="form.subject" :items="subjectTypes"
@@ -81,7 +81,7 @@ const submit = () => {
             </div>
             <div class="grid gap-4 mx-auto text-center ">
                 <div>
-                    <div class="w-20 p-6 mx-auto mb-3 bg-third-200 rounded-md ">
+                    <div class="w-20 p-6 mx-auto mb-3 rounded-md bg-third-200 ">
                         <svg style="fill: #60646c" id="o" xmlns="http://www.w3.org/2000/svg" height="2em"
                             viewBox="0 0 512 512">
                             <path
@@ -93,7 +93,7 @@ const submit = () => {
                     </p>
                 </div>
                 <div>
-                    <div class="w-20 p-6 mx-auto mb-3 bg-third-200 rounded-md ">
+                    <div class="w-20 p-6 mx-auto mb-3 rounded-md bg-third-200 ">
                         <svg style="fill: #60646c" id="o" xmlns="http://www.w3.org/2000/svg" height="2em"
                             viewBox="0 0 512 512">
                             <path
@@ -107,7 +107,7 @@ const submit = () => {
 
                 </div>
                 <div>
-                    <div class="w-20 p-6 mx-auto mb-3 bg-third-200 rounded-md ">
+                    <div class="w-20 p-6 mx-auto mb-3 rounded-md bg-third-200 ">
                         <svg style="fill: #60646c" id="o" xmlns="http://www.w3.org/2000/svg" height="2em"
                             viewBox="0 0 512 512">
                             <path
