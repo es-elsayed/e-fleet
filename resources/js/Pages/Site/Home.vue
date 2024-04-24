@@ -35,14 +35,15 @@ defineProps({
     <Head :title="$t('Dashboard')" />
 
     <SiteLayout>
-        <Carousel v-if="dir" wrap-arround class="max-w-screen-xl mx-auto " :dir="dir" nav-position='in' :items="sliders.data"
-            :num-in-lg="1" :num-in-md="1" pagination>
-            <template v-slot="{ item }">
-                <SliderCard :item="item" />
-            </template>
-        </Carousel>
-
-        <section-card :title="$t('cars')" class="my-16 bg-sec-400" description="">
+        <section-card class="bg-white" description="">
+            <Carousel v-if="dir" wrap-arround class="max-w-screen-xl mx-auto " :dir="dir" nav-position='in'
+                :items="sliders.data" :num-in-lg="1" :num-in-md="1" pagination>
+                <template v-slot="{ item }">
+                    <SliderCard :item="item" />
+                </template>
+            </Carousel>
+        </section-card>
+        <section-card :title="$t('cars')" class="my-16 " description="">
             <Carousel v-if="$page.props.settings.car_list == 'slider'" nav-position='out' :items="cars.data"
                 :num-in-lg="4" :num-in-md="2" navigation pagination>
                 <template v-slot="{ item }">
@@ -62,12 +63,13 @@ defineProps({
         </section-card>
 
         <section-card>
-            <middle-section :title="$page.props.about.name[locale]"
-                :description="$page.props.about.description[locale]" image_url="assets/images/middle.png" />
+            <middle-section :title="$page.props.about.name[locale]" :description="$page.props.about.description[locale]"
+                image_url="assets/images/middle.png" />
         </section-card>
 
         <section-card>
-            <parties-section v-if="$page.props.about.tax_register" :title="$t('tax_register',{number:$page.props.about.tax_register })"
+            <parties-section v-if="$page.props.about.tax_register"
+                :title="$t('tax_register', { number: $page.props.about.tax_register })"
                 :description="$t('reserve_your_car.description')">
                 <template #actions>
                     <Link :href="route('site.cars.index')"

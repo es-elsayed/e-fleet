@@ -12,6 +12,7 @@ import { useLocale } from '@/Composable/useLocale';
 import Footer from '@/Components/Includes/Footer.vue';
 import axios from 'axios'
 import ScrollUp from '@/Components/Includes/ScrollUp.vue';
+import Alert from '@/Components/Alert.vue';
 
 const showingNavigationDropdown = ref(false);
 let { locale, dir } = useLocale()
@@ -27,7 +28,7 @@ const changeLocale = (lang) => {
 
 <template>
     <div :dir="dir">
-        <div class="min-h-screen bg-third-100">
+        <div class="min-h-screen">
             <nav class="sticky top-0 z-50 w-full px-4 py-2 border-third-200 bg-sec-600 lg:px-6 dark:bg-third-800 ">
                 <!-- Primary Navigation Menu -->
                 <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -36,7 +37,7 @@ const changeLocale = (lang) => {
                         <!-- Logo -->
                         <div class="flex items-center md:w-full">
                             <Link :href="route('home')">
-                            <ApplicationLogo class="block w-auto text-third-800 fill-current h-9" />
+                            <ApplicationLogo class="block w-auto fill-current text-third-800 h-9" />
                             </Link>
                         </div>
 
@@ -107,7 +108,7 @@ const changeLocale = (lang) => {
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
-                                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-third-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-third-700 focus:outline-none">
+                                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out bg-white border border-transparent rounded-md text-third-500 hover:text-third-700 focus:outline-none">
                                                 {{ $page.props.auth.user.name }}
 
                                                 <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +134,7 @@ const changeLocale = (lang) => {
                         <!-- Hamburger -->
                         <div class="flex items-center -me-2 lg:hidden">
                             <button @click="showingNavigationDropdown = !showingNavigationDropdown"
-                                class="inline-flex items-center justify-center p-2 text-third-400 transition duration-150 ease-in-out rounded-md hover:text-third-500 hover:bg-third-100 focus:outline-none focus:bg-third-100 focus:text-third-500">
+                                class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md text-third-400 hover:text-third-500 hover:bg-third-100 focus:outline-none focus:bg-third-100 focus:text-third-500">
                                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path :class="{
         hidden: showingNavigationDropdown,
@@ -204,6 +205,7 @@ const changeLocale = (lang) => {
                     <slot name="header" />
                 </div>
             </header>
+            <Alert/>
 
             <!-- Page Content -->
             <main>
