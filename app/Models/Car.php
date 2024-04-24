@@ -23,10 +23,11 @@ class Car extends Model
         'reduce',
         'stars',
     ];
-    // public function reservations()
-    // {
-    //     return $this->hasMany(Reservation::class);
-    // }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 
     public function scopeIsAvailable($query)
     {
@@ -52,8 +53,4 @@ class Car extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // public function insurance()
-    // {
-    //     return $this->hasOne(Insurance::class);
-    // }
 }

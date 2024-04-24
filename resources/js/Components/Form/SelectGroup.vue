@@ -3,7 +3,7 @@ import Label from "./Label.vue";
 import Error from "./Error.vue";
 import Select from "./Select.vue";
 
-defineProps({
+const props = defineProps({
     modelValue: {},
     items: Array,
     itemText: {
@@ -13,6 +13,10 @@ defineProps({
     itemValue: {
         type: String,
         default: "id",
+    },
+    handleTranslate: {
+        type: Boolean,
+        default: false,
     },
     withoutSelect: {
         type: Boolean,
@@ -27,6 +31,7 @@ defineProps({
         default: "",
     },
 });
+
 </script>
 
 <template>
@@ -34,7 +39,8 @@ defineProps({
         <Label v-if="label" :value="label" :required="$attrs.required" />
 
         <Select class="mt-1" :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)"
-            :items="items" :item-text="itemText" :item-value="itemValue" :without-select="withoutSelect" v-bind="$attrs" />
+            :items="items" :item-text="itemText" :item-value="itemValue"
+            :without-select="withoutSelect" v-bind="$attrs" :handleTranslate="handleTranslate" />
 
         <Error v-if="errorMessage" class="mt-1" :message="errorMessage" />
     </div>

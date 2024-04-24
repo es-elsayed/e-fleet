@@ -3,6 +3,8 @@ import { Link } from '@inertiajs/vue3';
 import stars from '@/Components/Stars.vue';
 import { useLocale } from '@/Composable/useLocale';
 let { locale, dir } = useLocale()
+import WhatsappIcon from '@/Icons/whatsapp.vue';
+import CalenderIcon from '@/Icons/calender.vue';
 
 const props = defineProps({
     item: {
@@ -46,17 +48,21 @@ const props = defineProps({
                 <stars :number="parseInt(item.stars)" />
 
             </div>
-            <a :href="`https://api.whatsapp.com/send?phone=${item.phone}&text=reservation car: ${item.brand} ${item.model}`"
-                target="_blank"
+            <div class="flex justify-between">
+                <Link :href="route('site.reservations.create', { car: item.id })"
                 class="flex items-center justify-center rounded-md bg-third-900 hover:bg-pr-400 px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
-                <svg id="thisicon" class="w-6 h-6 mr-4 fill-white" xmlns="http://www.w3.org/2000/svg" height="1em"
-                    viewBox="0 0 512 512">
-                    <path
-                        d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z" />
-                </svg>
+                {{ $t('reserve_direct') }}
                 &nbsp; &nbsp;
-                {{ $t('reserve') }}
-            </a>
+                <calender-icon />
+            </Link>
+            <!-- <Link :href="route('site.reservations.create', { car: item.id })" -->
+            <a :href="`https://api.whatsapp.com/send?phone=${item.phone}&text=reservation car: ${item.brand[locale]} ${item.model[locale]}`"
+                    target="_blank" class="flex items-center justify-center rounded-md bg-third-900 hover:bg-pr-400 px-5 py-2.5 text-center text-sm font-medium text-white hover:text-white  focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <!-- {{ $t('reserve_whatsapp') }}
+                &nbsp; &nbsp; -->
+                <whatsapp-icon class="fill-green-600" />
+                </a>
+            </div>
         </div>
     </div>
 </template>

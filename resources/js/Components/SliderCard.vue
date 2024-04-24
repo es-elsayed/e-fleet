@@ -13,7 +13,7 @@ defineProps({
 
 </script>
 <template>
-    <div class="flex flex-col justify-between mx-12 my-8 md:w-3/5 md:me-12 md:mx-0">
+    <div class="flex flex-col justify-between mx-12 my-8 md:w-3/5 md:me-12 md:mx-0 md:p-8">
         <h1
             class="inline-block py-4 mb-4 text-4xl font-bold text-center text-transparent rtl:bg-gradient-to-l ltr:bg-gradient-to-r from-pr-600 via-pr-400 to-pr-300 bg-clip-text md:text-start font-car md:text-6xl">
             <!-- class="mb-8 text-4xl font-bold text-center text-third-900 md:text-start font-car md:text-7xl"> -->
