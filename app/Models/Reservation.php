@@ -19,9 +19,8 @@ class Reservation extends Model
         'full_name',
         'email',
         'phone',
-        'from_destination_id',
+        'destination_id',
         'from_address',
-        'to_destination_id',
         'to_address',
         'customer_arrived_at',
         'driver_arrived_at',
@@ -43,18 +42,9 @@ class Reservation extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function fromDestination(): BelongsTo
+    public function destination(): BelongsTo
     {
-        return $this->belongsTo(Destination::class, 'from_destination_id');
+        return $this->belongsTo(Destination::class);
     }
 
-    /**
-     * Get the toDestination that owns the Reservation
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function toDestination(): BelongsTo
-    {
-        return $this->belongsTo(Destination::class, 'to_destination_id');
-    }
 }

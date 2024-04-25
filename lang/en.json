@@ -47,8 +47,8 @@
         "phone": "ex. +966522412253",
         "people_number": "ex. 5"
     },
-    "from_destination": "From Destination",
-    "to_destination": "To Destination",
+    "from_place": "From Place",
+    "to_place": "To Place",
     "customer_arrived_at": "Your Arrival Time",
     "driver_arrived_at": "Our Arrival Time",
     "Select": "Select {name}",

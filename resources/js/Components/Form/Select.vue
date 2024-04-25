@@ -43,7 +43,7 @@ const options = computed(() => {
 const select = ref(null);
 
 onMounted(() => {
-    if (select.value.hasAttribute("autofocus")) {
+    if (select.value && select.value.hasAttribute("autofocus")) {
         select.value.focus();
     }
 });
@@ -51,6 +51,8 @@ onMounted(() => {
 let translatedData = ref({});
 
 const getTranslatedNames = (items) => {
+    if (!items) return [];
+
     translatedData.value = items;
     if (props.handleTranslate) {
         translatedData.value = items.map(item => {
@@ -62,8 +64,7 @@ const getTranslatedNames = (items) => {
     }
     return translatedData.value;
 };
-
-</script>
+ </script>
 
 <template>
     <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="select"

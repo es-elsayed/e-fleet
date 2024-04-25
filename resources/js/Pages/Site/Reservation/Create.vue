@@ -10,7 +10,7 @@ import Search from "@/Components/Search.vue";
 import GridCard from "@/Components/SectionLayout/GridCard.vue";
 import stars from '@/Components/Stars.vue';
 import { useLocale } from '@/Composable/useLocale';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 let { locale, dir } = useLocale()
 
 const props = defineProps({
@@ -18,11 +18,22 @@ const props = defineProps({
         type: Object,
         default: ({})
     },
-    destinations: {
+    places: {
         type: Object,
         default: ({})
     }
 });
+
+let from_place_id = ref(null);
+let destinations = ref(null);
+watch(
+    () => from_place_id.value,
+    (id) => {
+        axios.get(route('api.destinations.search', { id: id })).then((response) => {
+            destinations.value = response.data.data;
+        });
+    }
+);
 
 const form = useForm({
     full_name: "",
@@ -30,9 +41,8 @@ const form = useForm({
     phone: "",
     customer_arrived_at: "",
     driver_arrived_at: "",
-    from_destination_id: "",
+    destination_id: "",
     from_adderss: "",
-    to_destination_id: "",
     to_adderss: "",
     people_number: 1,
     note: "",
@@ -53,7 +63,6 @@ const getTranslatedNames = (dests, lang) => {
         };
     });
 };
-
 </script>
 
 <template>
@@ -103,17 +112,16 @@ const getTranslatedNames = (dests, lang) => {
                                     id="driver_arrived_at" label="driver_arrived_at"
                                     :error-message="form.errors.driver_arrived_at" />
 
-                                <SelectGroup :placeholder="$t('Select', { name: $t('from_destination') })" required
-                                    handleTranslate class="col-span-3" label="from_destination"
-                                    v-model="form.from_destination_id" :items="destinations.data"
-                                    :error-message="form.errors.from_destination_id" />
+                                <SelectGroup :placeholder="$t('Select', { name: $t('from_place') })" required
+                                    handleTranslate class="col-span-3" label="from_place" v-model="from_place_id"
+                                    :items="places.data" />
 
                                 <InputGroup class="col-span-3" v-model="form.from_adderss" id="from_adderss"
                                     label="from_adderss" :error-message="form.errors.from_adderss" />
 
-                                <SelectGroup :placeholder="$t('Select', { name: $t('to_destination') })" handleTranslate
-                                    required class="col-span-3" label="to_destination" v-model="form.to_destination_id"
-                                    :items="destinations.data" :error-message="form.errors.to_destination_id" />
+                                <SelectGroup :placeholder="$t('Select', { name: $t('to_place') })" handleTranslate
+                                    required class="col-span-3" label="to_place" v-model="form.destination_id"
+                                    :items="destinations" :error-message="form.errors.destination_id" />
 
                                 <InputGroup class="col-span-3" v-model="form.to_adderss" id="to_adderss"
                                     label="to_adderss" :error-message="form.errors.to_adderss" />
