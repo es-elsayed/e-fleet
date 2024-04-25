@@ -72,10 +72,10 @@ const props = defineProps({
                                 <InputGroup class="col-span-2" id="driver_arrived_at" label="driver_arrived_at" readonly
                                     :value="reservation.data.driver_arrived_at" />
 
-                                <InputGroup class="col-span-2" id="from_destination" label="from_destination" readonly
+                                <InputGroup class="col-span-2" id="from_destination" label="from_place" readonly
                                     :value="reservation.data.from_destination[locale]" />
 
-                                <InputGroup class="col-span-2" id="to_destination" label="to_destination" readonly
+                                <InputGroup class="col-span-2" id="to_destination" label="to_place" readonly
                                     :value="reservation.data.to_destination[locale]" />
 
                                 <TextareaGroup gClass="sm:col-span-6" id="note" readonly label="note"

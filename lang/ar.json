@@ -50,9 +50,9 @@
         "people_number": "مثال: 5"
     },
 
-    "from_destination": "مكان الركوب",
+    "from_place": "مكان الركوب",
     "from_adderss": "مكان الركوب بالتفصيل",
-    "to_destination": "مكان النزول",
+    "to_place": "مكان النزول",
     "to_adderss": "مكان النزول بالتفصيل",
     "customer_arrived_at": "موعود وصولكم",
     "driver_arrived_at": "موعد وصولنا",

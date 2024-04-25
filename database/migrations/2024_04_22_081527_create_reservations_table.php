@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email')->nullable();
             $table->string('phone');
-            $table->foreignId('from_destination_id')->constrained('destinations');
+            $table->foreignId('destination_id')->constrained('destinations');
             $table->string('from_address')->nullable();
-            $table->foreignId('to_destination_id')->constrained('destinations');
             $table->string('to_address')->nullable();
 
             $table->dateTime('customer_arrived_at');

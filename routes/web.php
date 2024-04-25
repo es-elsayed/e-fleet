@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', HomeController::class)->name('home');
+Route::get('/test', fn () =>  'test');
 
 Route::get('/change-locale/{locale}', function ($locale) {
     Session::put('locale', $locale);

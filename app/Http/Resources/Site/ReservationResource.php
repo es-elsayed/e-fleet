@@ -15,7 +15,7 @@ class ReservationResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-
+        // dd($this->destination);
         return [
             'id' => $this->id,
             'code' => $this->code,
@@ -23,12 +23,12 @@ class ReservationResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'from_destination' => [
-                'en' => $this->fromDestination->name_en . ($this->to_address ? ",$this->to_address" : ''),
-                'ar' => $this->fromDestination->name_ar . ($this->to_address ? ",$this->to_address" : '')
+                'en' => $this->destination->fromPlace->name_en . ($this->to_address ? ",$this->to_address" : ''),
+                'ar' => $this->destination->fromPlace->name_ar . ($this->to_address ? ",$this->to_address" : '')
             ],
             'to_destination' => [
-                'en' => $this->toDestination->name_en . ($this->to_address ? ",$this->to_address" : ''),
-                'ar' => $this->toDestination->name_ar . ($this->to_address ? ",$this->to_address" : '')
+                'en' => $this->destination->toPlace->name_en . ($this->to_address ? ",$this->to_address" : ''),
+                'ar' => $this->destination->toPlace->name_ar . ($this->to_address ? ",$this->to_address" : '')
             ],
             'customer_arrived_at' => Carbon::parse($this->customer_arrived_at)->format('Y-m-d @ (g:i A)'),
             'driver_arrived_at' => Carbon::parse($this->driver_arrived_at)->format('Y-m-d @ (g:i A)'),
