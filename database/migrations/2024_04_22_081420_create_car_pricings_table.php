@@ -16,8 +16,7 @@ return new class extends Migration
     {
         Schema::create('car_pricings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('from_destination_id')->constrained('destinations')->onDelete('cascade');
-            $table->foreignId('to_destination_id')->constrained('destinations')->onDelete('cascade');
+            $table->foreignId('destination_id')->constrained('destinations')->onDelete('cascade');
             $table->foreignId('car_id')->constrained('cars')->onDelete('cascade');
             $table->double('price');
             $table->enum('type', CarPricing::values())->default(CarPricing::Normal);

@@ -21,15 +21,14 @@ class ReservationRequest extends FormRequest
      */
     public function rules(): array
     {
-        // dd(\Carbon\Carbon::parse($this->driver_arrived_at)->format());
         return [
             'full_name' => 'required|min:3|max:255',
             'email' => 'nullable|email',
             'phone' => 'required|min:9|max:20',
-            'destination_id' => 'required|exists:destinations,id',
+            'car_pricing_id' => 'required|exists:car_pricings,id',
             'from_address' => 'nullable|string',
             'to_address' => 'nullable|string',
-            'customer_arrived_at' => 'required|date',
+            'customer_arrived_at' => 'required|date|after_or_equal:today',
             'driver_arrived_at' => 'required|date',
             'people_number' => 'required|integer|min:0|max:50',
             'attachment' => 'nullable|mimes:png,jpg,pdf',

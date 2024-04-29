@@ -89,6 +89,10 @@
     "order_info": "Order Information",
     "welcome_message": "Welcome: {name}",
     "res_code_ref": "Reservation Code Reference is: {code}",
+    "destination": "Destination:",
+    "destination.details": "From: {from} - to: {to}",
+    "total_price": "Total Price:",
+    "price_amount": "{amount} S.R",
 
     "search": "Search"
 }

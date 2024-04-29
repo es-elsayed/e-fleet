@@ -92,6 +92,10 @@
     "order_info": "بيانات الطلب",
     "welcome_message": "مرحبًا: {name}",
     "res_code_ref": "كود الحجز المرجعي هو: {code}",
+    "destination": "الرحلة:",
+    "destination.details": "من: {from} - إلى: {to}",
+    "total_price": "السعر الكلي:",
+    "price_amount": "{amount} ر.س",
 
     "search": "بحث"
 }

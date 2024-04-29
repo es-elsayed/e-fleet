@@ -37,4 +37,29 @@ class Destination extends Model
     {
         return $this->belongsTo(Place::class, 'to_place_id');
     }
+    public static function getIdByPlaceName($from, $to)
+    {
+        $destination = self::whereHas('fromPlace', function ($query) use ($from) {
+            $query->where('name_en', $from);
+        })->whereHas('toPlace', function ($query) use ($to) {
+            $query->where('name_en', $to);
+        })->first();
+
+        if ($destination) {
+            return $destination->id;
+        } else {
+            return null; // Or you can handle the case where no record is found
+        }
+    }
+    // {
+    //     $record = self::where('from_place_id', $from)
+    //         ->where('to_place_id', $to)
+    //         ->first();
+
+    //     if ($record) {
+    //         return $record->id;
+    //     } else {
+    //         return null; // Or you can handle the case where no record is found
+    //     }
+    // }
 }

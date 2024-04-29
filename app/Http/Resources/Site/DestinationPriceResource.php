@@ -5,7 +5,7 @@ namespace App\Http\Resources\Site;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class DestinationSearchResource extends JsonResource
+class DestinationPriceResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +16,9 @@ class DestinationSearchResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => [
-                "en" => $this->toPlace['name_en'],
-                "ar" => $this->toPlace['name_ar'],
-            ],
+            'amount' => $this->price,
+            'from' => PlaceResource::make($this->destination->fromPlace),
+            'to' => PlaceResource::make($this->destination->toPlace),
         ];
     }
 }

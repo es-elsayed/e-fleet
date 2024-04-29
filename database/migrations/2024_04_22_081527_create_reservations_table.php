@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email')->nullable();
             $table->string('phone');
-            $table->foreignId('destination_id')->constrained('destinations');
+            $table->foreignId('car_pricing_id')->constrained('car_pricings');
             $table->string('from_address')->nullable();
             $table->string('to_address')->nullable();
 
@@ -26,7 +26,6 @@ return new class extends Migration
             $table->dateTime('driver_arrived_at');
 
             $table->integer('people_number');
-            $table->foreignId('car_id')->constrained('cars');
             $table->string('attachment')->nullable();
             $table->text('note')->nullable();
             $table->enum('status', ['pending', 'accepted', 'not-accepted', 'failed', 'done'])->default('pending');

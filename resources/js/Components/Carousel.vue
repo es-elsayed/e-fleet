@@ -114,11 +114,11 @@ const navClass = `${props.navClasses} ${navigationPosition.value}`;
 }
 
 .out.carousel__next {
-    left: -6rem !important;
+    left: -4rem !important;
 }
 
 .out.carousel__prev {
-    right: -6rem !important;
+    right: -4rem !important;
 }
 
 .in.carousel__next {

@@ -66,8 +66,8 @@ class CarSeeder extends Seeder
             [
                 'brand_id' => $brands['gmc'],
                 'category_id' => $categories['Popular'],
-                'model_en' => '2020',
-                'model_ar' => '2020',
+                'model_en' => 'Yukon 2020',
+                'model_ar' => 'يوكن 2020',
                 'image' => 'assets/images/cars/gmc-2020.png',
                 'is_active' => 1,
                 'is_available' => 1,
@@ -77,8 +77,8 @@ class CarSeeder extends Seeder
             [
                 'brand_id' => $brands['gmc'],
                 'category_id' => $categories['VIP'],
-                'model_en' => '2023',
-                'model_ar' => '2023',
+                'model_en' => 'Yukon 2023',
+                'model_ar' => 'يوكن 2023',
                 'image' => 'assets/images/cars/gmc-2023.png',
                 'is_active' => 1,
                 'is_available' => 1,

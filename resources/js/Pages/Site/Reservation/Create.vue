@@ -34,6 +34,8 @@ watch(
         });
     }
 );
+let to_place_id = ref(null);
+let price = ref(null);
 
 const form = useForm({
     full_name: "",
@@ -41,12 +43,26 @@ const form = useForm({
     phone: "",
     customer_arrived_at: "",
     driver_arrived_at: "",
-    destination_id: "",
+    car_pricing_id: "",
     from_adderss: "",
     to_adderss: "",
     people_number: 1,
     note: "",
 });
+
+let destinationId = ref(null);
+let selectedDestination = ref(null);
+
+watch(
+    () => destinationId.value,
+    (id) => {
+        axios.get(route('api.car.destination.price', { car: props.car.data.id, destination: id })).then((response) => {
+            selectedDestination.value = response.data.data
+            form.car_pricing_id = response.data.data.id
+            console.log(response.data.data);
+        });
+    }
+);
 
 const submit = () => {
     form.post(route("site.reservations.store", { car: props.car.data.id }), {
@@ -120,8 +136,8 @@ const getTranslatedNames = (dests, lang) => {
                                     label="from_adderss" :error-message="form.errors.from_adderss" />
 
                                 <SelectGroup :placeholder="$t('Select', { name: $t('to_place') })" handleTranslate
-                                    required class="col-span-3" label="to_place" v-model="form.destination_id"
-                                    :items="destinations" :error-message="form.errors.destination_id" />
+                                    required class="col-span-3" label="to_place" v-model="destinationId"
+                                    :items="destinations" :error-message="form.errors.car_pricing_id" />
 
                                 <InputGroup class="col-span-3" v-model="form.to_adderss" id="to_adderss"
                                     label="to_adderss" :error-message="form.errors.to_adderss" />
@@ -171,25 +187,31 @@ const getTranslatedNames = (dests, lang) => {
                         <p v-else class="mx-3 text-red-600 text-md ">
                             Not asured !!!
                         </p>
-                    </div>
-
-                    <div class="w-full mt-8 ms-8">
-                        <p id="duration" class="text-lg text-third-600 font-car ms-2">Duration:
-                            <span
-                                class="p-2 mx-2 font-medium border rounded-md text-third-700 font-car text-md border-pr-400 ">
-                                X days
-                            </span>
-                        </p>
-                    </div>
-
-                    <div class="w-full mt-8 ms-8">
-                        <p id="total-price" class="text-lg text-third-600 font-car ms-2">Total Price:
-                            <span
-                                class="p-2 mx-2 font-medium border rounded-md text-third-700 font-car text-md border-pr-400 ">
-                                Y $
-                            </span>
-                        </p>
                     </div> -->
+
+                    <div class="w-full mt-8 ms-8">
+                        <p id="duration" class="text-lg text-third-600 font-car ms-2">
+                            {{ $t('destination') }}
+                            <span
+                                class="p-2 mx-2 font-medium border rounded-md text-third-700 font-car text-md border-pr-400 ">
+                                {{ selectedDestination ? $t('destination.details', {
+                                        from: selectedDestination.from.name[locale], to: selectedDestination.to.name[locale]
+                                    }) : '--'
+                                }}
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="w-full mt-8 ms-8">
+                        <p id="total-price" class="text-lg text-third-600 font-car ms-2">
+                            {{ $t('total_price') }}
+                            <span
+                                class="p-2 mx-2 font-medium border rounded-md text-third-700 font-car text-md border-pr-400 ">
+                                {{ selectedDestination ? $t('price_amount', { amount: selectedDestination.amount }) :
+                                '--' }}
+                            </span>
+                        </p>
+                    </div>
                     <div id="mobile_submit_button" class="w-full mt-12 md:hidden ">
                         <button type="submit"
                             class="w-full p-3 font-bold text-white rounded-lg shadow-xl bg-pr-400 hover:bg-black hover:shadow-none ">Order

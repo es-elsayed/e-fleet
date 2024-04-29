@@ -14,29 +14,79 @@ class DestinationSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach ($this->data() as $data) {
+        foreach (mapAllPlaces() as $data) {
             Destination::create($data);
         }
     }
     protected function data()
     {
-        $places = Place::pluck('name_en','id' );
+        $places = Place::pluck('id', 'name_en');
+        return [
+            [
+                "from_place_id" => $places['Mecca'],
+                "to_place_id" =>   $places['Jeddah'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Jeddah'],
+                "to_place_id" =>   $places['Mecca'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Mecca'],
+                "to_place_id" =>   $places['Madinah'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Madinah'],
+                "to_place_id" =>   $places['Mecca'],
+                "is_active" => 1
+            ],
 
-        // Loop through each element of $arr1
-        foreach ($places as $from_id => $from) {
-            foreach ($places as $to_id => $to) {
-                // Skip if $from and $to are the same
-                if ($from_id === $to_id) {
-                    continue;
-                }
-                // Construct the new array element
-                $result[] = [
-                    "from_place_id" => $from_id,
-                    "to_place_id" => $to_id,
-                    "is_active" => 1
-                ];
-            }
-        }
-        return $result;
+            [
+                "from_place_id" => $places['Mecca'],
+                "to_place_id" =>   $places['Taif'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Taif'],
+                "to_place_id" =>   $places['Mecca'],
+                "is_active" => 1
+            ],
+
+            [
+                "from_place_id" => $places['Madinah'],
+                "to_place_id" =>   $places['Jeddah'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Jeddah'],
+                "to_place_id" =>   $places['Madinah'],
+                "is_active" => 1
+            ],
+
+            [
+                "from_place_id" => $places['Madinah'],
+                "to_place_id" =>   $places['Taif'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Taif'],
+                "to_place_id" =>   $places['Madinah'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Mecca'],
+                "to_place_id" =>   $places['Mazarat Mecca'],
+                "is_active" => 1
+            ],
+            [
+                "from_place_id" => $places['Madinah'],
+                "to_place_id" =>   $places['Mazarat Madinah'],
+                "is_active" => 1
+            ],
+
+        ];
+
     }
 }

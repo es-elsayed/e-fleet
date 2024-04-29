@@ -19,32 +19,29 @@ class Reservation extends Model
         'full_name',
         'email',
         'phone',
-        'destination_id',
+        'car_pricing_id',
         'from_address',
         'to_address',
         'customer_arrived_at',
         'driver_arrived_at',
         'people_number',
-        'car_id',
         'attachment',
         'note',
         'status',
         'is_prepaid',
 
-        // 'arrival_time',
-        // 'departure_time',
     ];
     const CODE_PREFIX = "RS-";
     const CODE_SUFFIX = "";
 
     /**
-     * Get the fromDestination that owns the Reservation
+     * Get the carPricing that owns the Reservation
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function destination(): BelongsTo
+    public function carPricing(): BelongsTo
     {
-        return $this->belongsTo(Destination::class);
+        return $this->belongsTo(CarPricing::class);
     }
 
 }

@@ -78,6 +78,9 @@ const props = defineProps({
                                 <InputGroup class="col-span-2" id="to_destination" label="to_place" readonly
                                     :value="reservation.data.to_destination[locale]" />
 
+                                <InputGroup class="col-span-2" id="price_amount" label="total_price" readonly
+                                    :value="$t('price_amount',{amount:reservation.data.price_amount})" />
+
                                 <TextareaGroup gClass="sm:col-span-6" id="note" readonly label="note"
                                     :value="reservation.data.note" />
 

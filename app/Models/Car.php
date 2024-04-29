@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Car extends Model
 {
@@ -26,10 +27,20 @@ class Car extends Model
         'pricing_type'
     ];
 
-    public function reservations()
+    /**
+     * Get all of the reservations for the Car
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function reservations(): HasManyThrough
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasManyThrough(Reservation::class, CarPricing::class);
     }
+
+    // public function reservations()
+    // {
+    //     return $this->hasMany(Reservation::class);
+    // }
 
     public function scopeIsAvailable($query)
     {
@@ -55,17 +66,17 @@ class Car extends Model
         return $this->belongsTo(Category::class);
     }
     /**
-     * Get all of the carPricings for the Car
+     * Get all of the pricings for the Car
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    // public function carPricings(): HasMany
-    // {
-    //     return $this->hasMany(CarPricing::class, 'car_id', 'id');
-    // }
+    public function pricings(): HasMany
+    {
+        return $this->hasMany(CarPricing::class, 'car_id', 'id');
+    }
 
     // public function scopeCurrentPrice($query)
     // {
-    //     return $query->carPricings()->where('type', $this->pricing_type);
+    //     return $query->pricing()->where('type', $this->pricing_type);
     // }
 }

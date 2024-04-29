@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CarSeeder::class,
             PlaceSeeder::class,
             DestinationSeeder::class,
+            CarPricingSeeder::class,
             SliderSeeder::class,
             TestimonialSeeder::class,
         ]);

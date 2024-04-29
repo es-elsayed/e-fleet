@@ -4,16 +4,35 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CarPricing extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'from_destination_id',
-        'to_destination_id',
+        'destination_id',
         'car_id',
         'price',
         'type',
     ];
+
+    /**
+     * Get the destination that owns the CarPricing
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function destination(): BelongsTo
+    {
+        return $this->belongsTo(Destination::class);
+    }
+    /**
+     * Get the car that owns the CarPricing
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function car(): BelongsTo
+    {
+        return $this->belongsTo(Car::class);
+    }
 }

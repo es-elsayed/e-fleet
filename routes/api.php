@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Site\DestinationSearchController;
+use App\Http\Controllers\Api\CarDestinationPriceController;
+use App\Http\Controllers\Api\DestinationSearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('destinations/search', DestinationSearchController::class)->name('destinations.search');
+Route::get('cars/{car}/destinations/{destination}/price', CarDestinationPriceController::class)->name('car.destination.price');
