@@ -17,6 +17,7 @@ class DestinationPriceResource extends JsonResource
         return [
             'id' => $this->id,
             'amount' => $this->price,
+            'type' => $this->type,
             'from' => PlaceResource::make($this->destination->fromPlace),
             'to' => PlaceResource::make($this->destination->toPlace),
         ];

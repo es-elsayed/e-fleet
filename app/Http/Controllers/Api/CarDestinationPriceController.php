@@ -16,8 +16,8 @@ class CarDestinationPriceController extends Controller
      */
     public function __invoke(Car $car, Destination $destination)
     {
-        $price = $car->pricings->where('destination_id', $destination->id)->first();
-        // dd($price);
+        $price = $car->pricings->where('destination_id', $destination->id)->where('type',$car->pricing_type)->first();
+
         return new DestinationPriceResource($price);
     }
 }
