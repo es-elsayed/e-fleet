@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Http\Resources\Site\DestinationPriceResource;
 use App\Traits\scopeActive;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -26,6 +28,27 @@ class Car extends Model
         'stars',
         'pricing_type'
     ];
+    protected $appends = ['name'];
+
+    public function name(): Attribute
+    {
+        return Attribute::make(
+            get: function () {
+                return  [
+                    'en' => $this->brand->name_en . " " . $this->model_en,
+                    'ar' => $this->brand->name_ar . " " . $this->model_ar,
+                ];
+            },
+        );
+    }
+
+    public function prices(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => DestinationPriceResource::collection(CarPricing::where('car_id', $this->id)->where('type', $this->pricing_type)->get())
+            // get: fn () => DestinationPriceResource::collection($this->pricings->where('type', $this->pricing_type))
+        );
+    }
 
     /**
      * Get all of the reservations for the Car
