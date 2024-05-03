@@ -33,7 +33,7 @@ class ListPriceResource extends JsonResource
             // ],
             // 'engine' => $this->engine,
             // 'price_per_day' => $this->price_per_day,
-            'image_url' => $this->image,
+            'image_url' =>"/$this->image",
             // 'quantity' => $this->quantity,
             // 'status' => $this->status,
             // 'available' => $this->available,

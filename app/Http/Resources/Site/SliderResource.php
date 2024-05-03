@@ -29,7 +29,7 @@ class SliderResource extends JsonResource
                 'ar' => $this->action_title_ar,
             ],
             'action_url' => $this->action_url,
-            'image_url' => $this->image,
+            'image_url' =>"/$this->image",
             'alt' => [
                 'en' => $this->alt_en,
                 'ar' => $this->alt_ar,

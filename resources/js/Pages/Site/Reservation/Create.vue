@@ -160,7 +160,7 @@ const getTranslatedNames = (dests, lang) => {
 
                 <div class="flex flex-col items-center justify-start md:w-1/3">
                     <div class="relative mx-3 mt-3 flex h-[200px] w-3/4   overflow-hidden rounded-xl shadow-lg">
-                        <img class="object-cover w-full h-full" :src="'/' + car.data.image_url" alt="product image" />
+                        <img class="object-cover w-full h-full" :src=" car.data.image_url" alt="product image" />
                         <span
                             class="absolute top-0 left-0 w-24 h-8 px-2 py-1 m-2 text-sm font-medium text-center text-white rounded-full bg-pr-400">
                             {{ car.data.reduce }}

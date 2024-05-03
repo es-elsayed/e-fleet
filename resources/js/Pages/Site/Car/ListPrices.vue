@@ -44,7 +44,7 @@ const props = defineProps({
         <hr>
         <br>
         <div class="flex items-center justify-center w-16 h-16 mx-auto"> <!-- Apply flexbox -->
-            <img :src="'/' + data.image_url" :alt="data.name[locale]"
+            <img :src="data.image_url" :alt="data.name[locale]"
             class="w-full transition-transform duration-300 hover:scale-[4] rounded-full hover:z-50">
         </div>
     </Th>
@@ -54,7 +54,7 @@ const props = defineProps({
                             {{ $t('car_image') }}
                         </Th>
                         <Th class="px-0 py-0 " v-for="item in items.data" :key="item.id">
-                            <img :src="'/' + item.image_url" :alt="item.name[locale]"
+                            <img :src="item.image_url" :alt="item.name[locale]"
                                 class="w-full transition-transform duration-300 hover:scale-[4] rounded-full z-50">
                         </Th>
                     </thead> -->
