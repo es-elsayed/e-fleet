@@ -93,6 +93,8 @@
     "destination.details": "From: {from} - to: {to}",
     "total_price": "Total Price:",
     "price_amount": "{amount} S.R",
+    "car_name": "Name",
+    "car_image": "Image",
 
     "search": "Search"
 }

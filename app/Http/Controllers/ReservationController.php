@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ReservationRequest;
 use App\Http\Resources\Site\CarResource;
-use App\Http\Resources\Site\DestinationResource;
-use App\Http\Resources\Site\DestinationFromDetailsResource;
 use App\Http\Resources\Site\PlaceResource;
 use App\Http\Resources\Site\ReservationResource;
 use App\Models\Car;

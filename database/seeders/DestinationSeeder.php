@@ -14,7 +14,10 @@ class DestinationSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach (mapAllPlaces() as $data) {
+        // foreach (mapAllPlaces() as $data) {
+        //     Destination::create($data);
+        // }
+        foreach ($this->data() as $data) {
             Destination::create($data);
         }
     }

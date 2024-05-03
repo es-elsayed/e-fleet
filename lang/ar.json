@@ -96,6 +96,8 @@
     "destination.details": "من: {from} - إلى: {to}",
     "total_price": "السعر الكلي:",
     "price_amount": "{amount} ر.س",
+    "car_name": "النوع",
+    "car_image": "الصورة",
 
     "search": "بحث"
 }

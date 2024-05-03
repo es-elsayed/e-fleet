@@ -18,8 +18,13 @@ class DestinationPriceResource extends JsonResource
             'id' => $this->id,
             'amount' => $this->price,
             'type' => $this->type,
+            'destination_id' => $this->destination->id,
             'from' => PlaceResource::make($this->destination->fromPlace),
             'to' => PlaceResource::make($this->destination->toPlace),
+            'destination' => [
+                'en'=>$this->destination->fromPlace->name_en . ' - ' . $this->destination->toPlace->name_en ,
+                'ar'=>$this->destination->fromPlace->name_ar . ' - ' . $this->destination->toPlace->name_ar ,
+            ],
         ];
     }
 }

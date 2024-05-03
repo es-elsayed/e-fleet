@@ -5,7 +5,7 @@ namespace App\Http\Resources\Site;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class DestinationResource extends JsonResource
+class DestinationDetailsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,11 @@ class DestinationResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'from_destination' => new PlaceResource($this->fromPlace),
-            'to_destination' => new PlaceResource($this->toPlace),
+            'destination' => [
+                'en'=>$this->fromPlace->name_en . ' - ' . $this->toPlace->name_en ,
+                'ar'=>$this->fromPlace->name_ar . ' - ' . $this->toPlace->name_ar ,
+            ],
+            'amount' => $this->price,
             'distance' => $this->distance,
             'is_active' => $this->is_active,
         ];

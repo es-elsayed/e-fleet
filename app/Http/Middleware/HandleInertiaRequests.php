@@ -41,12 +41,12 @@ class HandleInertiaRequests extends Middleware
             'about' => [
                 'tax_register' => "101044524553",
                 'name' => [
-                    'en' =>  'Eslamco Platfrom',
-                    'ar' =>   'منصة إسلامكو'
+                    'en' =>  'E-Fleet Platfrom',
+                    'ar' =>   'منصة الأسطول الإلكتروني'
                 ],
                 'description' => [
-                    'en' =>  'Eslamco platform is the largest car booking platform in Saudi Arabia, as it allows visitors to the Sacred House of God to search and browse for a variety of cars that meet their needs, and allows users to book directly through the platform for luxury and regular cars as well as the mass transit service.',
-                    'ar' =>   '  منصة إسلامكو هي أكبر منصة لحجز السيارات في السعودية ، حيث يتيح لزوار بيت الله الحرام إمكانية  البحث والتصفح عن مجموعة متنوعة من السيارات التي تلبي إحتياجاتهم، كما يسمح للمستخدمين إمكانية الحجز المباشر عن طريق المنصة للسيارات الفاخرة والعادية وأيضًا خدمة النقل الجماعي.'
+                    'en' =>  'E-Fleet platform is the largest car booking platform in Saudi Arabia, as it allows visitors to the Sacred House of God to search and browse for a variety of cars that meet their needs, and allows users to book directly through the platform for luxury and regular cars as well as the mass transit service.',
+                    'ar' =>   '  منصة الأسطول الإلكتروني هي أكبر منصة لحجز السيارات في السعودية ، حيث يتيح لزوار بيت الله الحرام إمكانية  البحث والتصفح عن مجموعة متنوعة من السيارات التي تلبي إحتياجاتهم، كما يسمح للمستخدمين إمكانية الحجز المباشر عن طريق المنصة للسيارات الفاخرة والعادية وأيضًا خدمة النقل الجماعي.'
                 ],
                 'info' => ['en' =>  'company info in english', 'ar' =>   'معلومات الشركة بالعربي'],
                 'address' => ['en' =>  'company address in english', 'ar' =>   'عنوان الشركة بالعربي'],
