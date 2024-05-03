@@ -17,27 +17,13 @@ class ListPriceResource extends JsonResource
 
         return [
             'id' => $this->id,
-            // 'brand' => [
-            //     'en' => $this->brand->name_en,
-            //     'ar' => $this->brand->name_ar,
-            // ],
             'name' => $this->name,
             'prices' => $this->prices,
-            // 'category' => [
-            //     'en' => $this->category->name_en,
-            //     'ar' => $this->category->name_ar,
-            // ],
-            // 'model' => [
-            //     'en' => $this->model_en,
-            //     'ar' => $this->model_ar,
-            // ],
-            // 'engine' => $this->engine,
-            // 'price_per_day' => $this->price_per_day,
             'image_url' =>"/$this->image",
-            // 'quantity' => $this->quantity,
-            // 'status' => $this->status,
-            // 'available' => $this->available,
-            // 'reduce' => $this->reduce,
+            'alt' =>[
+                'en'=> $this->name['en'].' image',
+                'ar'=> $this->name['ar'].' image',
+            ],
             'stars' => $this->stars
         ];
     }

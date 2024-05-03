@@ -36,7 +36,7 @@ const changeLocale = (lang) => {
                         <!-- <div class="flex w-full"> -->
                         <!-- Logo -->
                         <div class="flex items-center md:w-full">
-                            <Link :href="route('home')">
+                            <Link :href="route('home')" name="Site Logo">
                             <ApplicationLogo class="block w-auto fill-current text-third-800 h-9" />
                             </Link>
                         </div>
@@ -133,7 +133,7 @@ const changeLocale = (lang) => {
 
                         <!-- Hamburger -->
                         <div class="flex items-center -me-2 lg:hidden">
-                            <button @click="showingNavigationDropdown = !showingNavigationDropdown"
+                            <button @click="showingNavigationDropdown = !showingNavigationDropdown" name="Header Dropdown"
                                 class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md text-third-400 hover:text-third-500 hover:bg-third-100 focus:outline-none focus:bg-third-100 focus:text-third-500">
                                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path :class="{

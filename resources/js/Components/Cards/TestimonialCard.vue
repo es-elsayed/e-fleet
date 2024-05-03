@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
     <div class="mx-8 my-4 md:my-4">
         <div class="flex justify-center mb-6">
-            <img :src="item.image_url"
+            <img :src="item.image_url"  :alt="item.alt"
                 class="w-32 rounded-full shadow-lg dark:shadow-black/20" />
         </div>
         <h5 class="mb-2 text-lg font-bold">{{ item.name }}</h5>

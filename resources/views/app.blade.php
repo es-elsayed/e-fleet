@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="E-Fleet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="توصيل من جدة الى مكة , توصيل من المدينة الى مكة , توصيل من جدة الى المدينة المنورة , توصيل من مكة ,
+      مشاوير جدة , سيارة ليموزين مكة , مشوار من جدة الى مكة , مطار جدة الى مكة , مكة الى مطار جدة ,
+      مواعيد الباصات من مطار جدة الى مكة , نقل من جدة الى مكة , نقل من مكة الى مطار جدة ,
+      سيارة اجرة من مطار جدة الى مكة , سيارة توصيل للمطار , شركات توصيل مشاوير في جدة , شركة من جدة لمكة ,
+      شركة توصيل جدة , قروب مشاوير جدة , كداد مكة جدة , كدادين جدة الطائف , كم ساعة من مطار جدة الى مكة ,
+      كم سعر التاكسي من مطار جدة الى مكة , كم ساعة من مطار جدة الى مكة ,مشاوير جدة مكة , كيف التنقل من مطر جدة الى مكة,
+      مشاوير جدة مكة , مشاوير مكة جدة , توصيل من مكة لمطار جدة , توصيل من والى المطار , توصيل من ينبع الى جدة ,
+      حجز باص من مطار جدة الى مكة , حجز سيارة من مطار جدة الى مكة ,سعر الاجرة من جدة الى مكة ,
+      سواق من مكة لجدة , سيارات توصيل من مطار جدة الى مكة توصيل المطار من المنصورة , توصيل من مطار الملك فهد">
+    <meta name="description"
+        content="توصيل من جدة الى مكة , توصيل من المدينة الى مكة , توصيل من جدة الى المدينة المنورة , توصيل من مكة ,
+      مشاوير جدة , سيارة ليموزين مكة , مشوار من جدة الى مكة , مطار جدة الى مكة , مكة الى مطار جدة ,
+      مواعيد الباصات من مطار جدة الى مكة , نقل من جدة الى مكة , نقل من مكة الى مطار جدة ,
+      سيارة اجرة من مطار جدة الى مكة , سيارة توصيل للمطار , شركات توصيل مشاوير في جدة , شركة من جدة لمكة ,
+      شركة توصيل جدة , قروب مشاوير جدة , كداد مكة جدة , كدادين جدة الطائف , كم ساعة من مطار جدة الى مكة ,
+      كم سعر التاكسي من مطار جدة الى مكة , كم ساعة من مطار جدة الى مكة ,مشاوير جدة مكة , كيف التنقل من مطر جدة الى مكة,
+      مشاوير جدة مكة , مشاوير مكة جدة , توصيل من مكة لمطار جدة , توصيل من والى المطار , توصيل من ينبع الى جدة ,
+      حجز باص من مطار جدة الى مكة , حجز سيارة من مطار جدة الى مكة ,سعر الاجرة من جدة الى مكة ,
+      سواق من مكة لجدة , سيارات توصيل من مطار جدة الى مكة توصيل المطار من المنصورة , توصيل من مطار الملك فهد">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        @routes
-        @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased bg-sec-400">
-        @inertia
-    </body>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    @routes
+    @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+    @inertiaHead
+</head>
+
+<body class="font-sans antialiased bg-sec-400">
+    @inertia
+</body>
+
 </html>

@@ -28,7 +28,7 @@ defineProps({
         </div>
         <div v-if="image_url" class="w-full md:w-1/2">
             <img :src="image_url" class="object-cover w-full rounded-b-xl lg:rounded-b-none lg:rounded-l-xl"
-                :alt="title" :title="description" />
+                :alt="title + ', '+ description +' image'" :title="description" />
         </div>
     </div>
 </template>

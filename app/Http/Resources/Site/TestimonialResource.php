@@ -21,6 +21,7 @@ class TestimonialResource extends JsonResource
             'phone' => $this->phone,
             'description' => $this->description,
             'image_url' => 'assets/images/person.jpg',
+            'alt' =>"$this->name image",
             'rate' => (int) $this->rate,
             'confirmed' => $this->confirmed_at ? true : false,
         ];

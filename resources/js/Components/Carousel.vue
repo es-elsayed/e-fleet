@@ -96,7 +96,7 @@ const navClass = `${props.navClasses} ${navigationPosition.value}`;
         </Slide>
         <template v-if="navigation || pagination" #addons>
             <navigation :class="navClass" v-if="navigation" />
-            <pagination v-if="pagination" />
+            <!-- <pagination v-if="pagination" /> -->
         </template>
     </carousel>
 </template>

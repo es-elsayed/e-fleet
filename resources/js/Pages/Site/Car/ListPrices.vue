@@ -36,19 +36,19 @@ const props = defineProps({
             <div class="relative overflow-x-auto">
                 <table class="w-full text-sm text-left text-third-500 rtl:text-right dark:text-third-400">
                     <thead class="text-xs uppercase text-third-700 bg-third-50 dark:bg-third-700 dark:text-third-400">
-    <Th class="border-b-0 whitespace-nowrap">
-        {{ $t('car_name') }}
-    </Th>
-    <Th class="border-b-0 whitespace-nowrap" v-for="data in items.data" :key="data.id">
-        {{ data.name[locale] }}
-        <hr>
-        <br>
-        <div class="flex items-center justify-center w-16 h-16 mx-auto"> <!-- Apply flexbox -->
-            <img :src="data.image_url" :alt="data.name[locale]"
-            class="w-full transition-transform duration-300 hover:scale-[4] rounded-full hover:z-50">
-        </div>
-    </Th>
-</thead>
+                        <Th class="border-b-0 whitespace-nowrap">
+                            {{ $t('car_name') }}
+                        </Th>
+                        <Th class="border-b-0 whitespace-nowrap" v-for="data in items.data" :key="data.id">
+                            {{ data.name[locale] }}
+                            <hr>
+                            <br>
+                            <div class="flex items-center justify-center w-16 h-16 mx-auto"> <!-- Apply flexbox -->
+                                <img :src="data.image_url" :alt="data.alt[locale]"
+                                    class="w-full transition-transform duration-300 hover:scale-[4] rounded-full hover:z-50">
+                            </div>
+                        </Th>
+                    </thead>
                     <!-- <thead class="text-xs uppercase text-third-700 bg-third-50 dark:bg-third-700 dark:text-third-400">
                         <Th class="whitespace-nowrap">
                             {{ $t('car_image') }}
